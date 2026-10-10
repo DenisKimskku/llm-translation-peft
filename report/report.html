@@ -110,8 +110,7 @@ Claude reference style more tightly; the ordering on our main dev set (and on ev
 weak translation: it echoes or translates the instruction instead of the text, falls into repetition loops, or answers in the
 wrong language (4–5% of Korean-target items; e.g. for "You have five remaining vacation days this year, …" it emits
 "이해를 위해, 이 문장은 다음과 같이 번역됩니다." repeated until the token limit). After fine-tuning these disappear
-(wrong-language outputs: 8 of 767 Korean-target items for the 50M system; omissions with length ratio &lt; 0.75: 11 of 1,535;
-no empty outputs), and the model reliably copies the parts of the input that are already in the target language while
+(wrong-language outputs: 33 of 767 Korean-target items at baseline → 5 of 767 for the final 5M system; outputs with length ratio &lt; 0.75: 36 → 13 of 1,535; exact matches with the reference: 29 → 119; items below 45 chrF++: 600 → 143; no empty outputs), and the model reliably copies the parts of the input that are already in the target language while
 translating the rest, e.g. "Please send me the 장학금 신청서를 by October 31, 그리고 어떤 서류를 첨부해야 하는지 알려 주세요." →
 "10월 31일까지 장학금 신청서를 보내 주시고, 어떤 서류를 첨부해야 하는지 알려 주세요." (exact match; baseline 8 chrF++).</p>
 <p><b>Switch-boundary handling.</b> Clause-level alternation and particle-attached insertions are handled well, including
