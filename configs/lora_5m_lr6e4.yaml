@@ -1,0 +1,4 @@
+budget: 5000000
+max_len: 384
+peft: {r: 4, alpha: 8, dropout: 0.0, target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj], dora: false, rslora: false}
+train: {lr: 6.0e-4, epochs: 2, batch_size: 8, grad_accum: 2, warmup_ratio: 0.03, scheduler: cosine, weight_decay: 0.0, logging_steps: 25}

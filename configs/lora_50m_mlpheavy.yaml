@@ -1,0 +1,12 @@
+budget: 50000000
+max_len: 384
+peft:
+  r: 20
+  alpha: 40
+  dropout: 0.0
+  target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+  rank_pattern: {"mlp\\.(gate_proj|up_proj|down_proj)": 60}
+  alpha_pattern: {"mlp\\.(gate_proj|up_proj|down_proj)": 120}
+  dora: false
+  rslora: false
+train: {lr: 2.0e-4, epochs: 2, batch_size: 8, grad_accum: 2, warmup_ratio: 0.03, scheduler: cosine, weight_decay: 0.0, logging_steps: 25}

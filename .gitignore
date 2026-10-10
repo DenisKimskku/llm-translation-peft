@@ -1,0 +1,14 @@
+# model weights / run artifacts
+outputs/
+logs/
+submission/
+# large or non-redistributable data (AI Hub / TED / BSD downloads, derived pools, round-trip caches)
+data/raw/
+data/train/
+data/gen/*.rt.jsonl
+# report build artifacts
+report/_*.png
+report/_results_table.html
+__pycache__/
+*.pyc
+.venv/

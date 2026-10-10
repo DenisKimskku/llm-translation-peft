@@ -1,0 +1,21 @@
+You are creating TRAINING data for a code-switched machine translation system among English (en), Spanish (es), Korean (ko), and Japanese (ja).
+
+Scenario: {domain} — {situation}. Participants: {roles}. Register: {register}.
+
+Write 8 DIFFERENT sentences that these participants would realistically say or write in this scenario. Mix sentence types (statements, requests, questions, instructions, explanations, complaints), vary length between 7 and 30 words, and include concrete details (times, dates, quantities, amounts, product or document names) but no real person names. Use plain, concrete wording that can be translated literally; avoid idioms, slang, and puns. Sentence {two_sent} may consist of two short sentences.
+
+For each sentence produce a JSON object with keys:
+- "en": the sentence in natural English.
+- "ko": a faithful literal Korean translation, polite formal register (-습니다 / -세요 / -주세요), natural spacing and punctuation, keeping every detail.
+- "es": a faithful literal Spanish translation.
+- "ja": a faithful literal Japanese translation, polite register (です / ます).
+- "mixed1": a natural code-switched version of the SAME sentence using exactly the languages given for that sentence in COMBOS1 below.
+- "mixed2": another natural code-switched version using exactly the languages given in COMBOS2 below, with a different switching pattern than mixed1.
+- "mixed1_langs", "mixed2_langs": lists of the language codes actually used.
+
+Code-switching must look like what real multilingual speakers produce: (a) insert nouns or noun phrases from another language with Korean/Japanese particles attached ("chest pain이", "meetingが", "El informe의 마지막 section을"), (b) alternate languages at clause boundaries ("Aunque el tren llegó tarde, 우리는 회의에 늦지 않았습니다."), (c) mix phrases inside a clause ("The meetingが終わったら、send me the revised slides."), (d) occasionally keep a verb or adjective from one language inside the grammar of another ("주문을 cancel하고"). Vary the pattern and the switch position across sentences; sometimes most of the sentence is in one language with a short switch, sometimes the languages are balanced. Every mixed sentence must keep EXACTLY the same meaning and all details as "en" — do not add, omit, or change information.
+
+COMBOS1 (sentence 1..8): {combos1}
+COMBOS2 (sentence 1..8): {combos2}
+
+Output ONLY a JSON array of 8 objects, nothing else.

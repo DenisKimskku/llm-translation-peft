@@ -1,0 +1,15 @@
+You are creating an EVALUATION set for code-switched machine translation among English (en), Spanish (es), Korean (ko), and Japanese (ja).
+
+Scenario for this batch: {domain} — {situation}. Speaker role: {role}. Register: {register}.
+
+Write 8 DIFFERENT sentences that such a speaker would realistically say or write in this scenario (requests, questions, statements, instructions, reports; vary length 8-28 words; include concrete details such as dates, amounts, names of things, but no real person names). Avoid idioms and slang; use plain, concrete wording that translates literally.
+
+For each sentence produce a JSON object with keys:
+- "en": the sentence in natural English.
+- "ko": a faithful literal Korean translation, polite formal register (-습니다 / -세요 / -주세요), natural spacing and punctuation.
+- "es": a faithful literal Spanish translation.
+- "ja": a faithful literal Japanese translation, polite register (です / ます).
+- "mixed1" and "mixed2": two DIFFERENT natural code-switched renderings of the SAME sentence, each mixing a different combination of languages chosen from {combos}. Mix within the sentence the way real bilingual/multilingual speakers do: insert nouns or noun phrases from another language with Korean/Japanese particles attached (e.g. "chest pain이", "meetingが", "El informe의 마지막 section을"), alternate at clause boundaries ("Aunque el tren llegó tarde, 우리는 회의에 늦지 않았습니다."), or mix phrases ("The meetingが終わったら、send me the revised slides."). The mixed sentence must keep EXACTLY the same meaning and all details as "en"; do not add or omit anything.
+- "mixed1_langs", "mixed2_langs": the lists of language codes actually used in mixed1 / mixed2.
+
+Output ONLY a JSON array of 8 objects, nothing else.

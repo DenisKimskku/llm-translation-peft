@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Code-Switching Translation with PEFT</title>
+<style>
+@page { size: A4; margin: 20mm 18mm; }
+body { font-family: "Noto Serif", "Noto Serif CJK KR", "Noto Serif CJK JP", serif; font-size: 11pt; line-height: 1.35; color: #111; }
+h1 { font-size: 16pt; margin: 0 0 4pt 0; } h2 { font-size: 12.5pt; margin: 12pt 0 4pt 0; } h3 { font-size: 11pt; margin: 8pt 0 2pt 0; }
+.meta { font-size: 10pt; color: #333; margin-bottom: 8pt; }
+table { border-collapse: collapse; font-size: 9.5pt; margin: 4pt 0 8pt 0; } th, td { border: 1px solid #999; padding: 2pt 5pt; text-align: right; } th:first-child, td:first-child { text-align: left; }
+th { background: #eee; } .small { font-size: 9pt; } code { font-family: "Noto Sans Mono", monospace; font-size: 9.5pt; }
+.ex { font-size: 9.5pt; margin: 2pt 0 2pt 10pt; } .ex b { font-weight: 600; }
+</style></head><body>
+<h1>Code-Switching Translation with PEFT on a Frozen Qwen3-1.7B</h1>
+<div class="meta">Midterm Project · Advanced Topics in Large Language Models · 2026xxxxxx · (name)</div>
+<h2>1. Overview</h2>
+<p>We build two parameter-efficient translation systems on a frozen <b>Qwen3-1.7B</b> backbone that translate single-language
+or code-switched English/Spanish/Korean/Japanese input into English or Korean. Both systems are LoRA adapters on all linear
+projections of all 28 layers: the <b>5M system</b> uses rank 4 (4,358,144 trainable parameters) and the <b>50M system</b> rank 44
+(47,939,584). Because no code-switched translation corpus exists for these languages, we synthesise the training data
+reference-first: an LLM writes clean sentences with faithful four-language versions and two code-switched variants whose
+matrix language, embedded language(s) and switching pattern we control explicitly (noun insertion with native particles, clause
+alternation, phrase mixing, light-verb constructions); variants are verified by an English-pivot round trip with an
+independent local model. On our development set (1,535 items, built like the official validation data) the untuned baseline
+scores BASELINE_SCORE; the 5M system reaches SCORE_5M and the 50M system SCORE_50M, with the 50M system ahead on every subset.</p>
+
+<h2>2. PEFT design</h2>
+<p>Both systems add LoRA adapters (Hu et al., 2021) to <b>every linear projection of every decoder layer</b> of the frozen
+Qwen3-1.7B backbone (28 layers; q/k/v/o projections of the attention block and gate/up/down projections of the MLP), with
+<code>lora_alpha = 2r</code>, no dropout, no bias, and the backbone weights never updated. Qwen3-1.7B has hidden size 2048,
+MLP size 6144 and 8 KV heads of dimension 128, so one rank of LoRA on all seven projections of one layer costs
+4096+3072+3072+4096+8192+8192+8192 = 38,912 parameters, i.e. 1,089,536 parameters per unit of rank for the whole network.</p>
+<table><tr><th>System</th><th>Rank r</th><th>alpha</th><th>Modules</th><th>Trainable params</th><th>Budget use</th></tr>
+<tr><td>5M</td><td>4</td><td>8</td><td>q,k,v,o,gate,up,down × 28 layers</td><td>4,358,144</td><td>87.2%</td></tr>
+<tr><td>50M</td><td>44</td><td>88</td><td>q,k,v,o,gate,up,down × 28 layers</td><td>47,939,584</td><td>95.9%</td></tr></table>
+<p><b>Motivation.</b> Under a fixed parameter budget the literature consistently favours spreading low-rank adapters over all
+linear layers (in particular the MLP) rather than concentrating a high rank on attention only (LoRA module ablations; QLoRA's
+"all linear layers" finding; Biderman et al., 2024). r=4 is the largest uniform all-linear rank that fits 5M, and r=44 the
+largest that fits 50M, so the 50M system is a strict superset of the 5M system: same modules, same data, same recipe, 11× the rank.
+We also tried DoRA at r=4 (4,931,584 parameters) and a learning-rate sweep; see Section 6.</p>
+<p><b>Training.</b> Supervised fine-tuning on (prompt, translation) pairs rendered with the Qwen3 chat template in
+non-thinking mode, i.e. the prompt ends with <code>&lt;|im_start|&gt;assistant\n&lt;think&gt;\n\n&lt;/think&gt;\n\n</code> exactly as at
+inference, and the loss is computed only on the translation tokens plus <code>&lt;|im_end|&gt;</code>. AdamW, cosine schedule,
+3% warm-up, effective batch 16, bf16, gradient checkpointing; one RTX 3080 (12 GB) trains ~2,300 tokens/s.</p>
+
+<h2>3. Training data generation</h2>
+<p>No suitable code-switched translation corpus exists for en/es/ko/ja, so all training data is synthetic and built
+<b>reference-first</b>: a clean target-language sentence is written first and the code-switched input is derived from it, so
+the reference never contains generation noise and stays literal, which is what a single-reference chrF++ rewards.</p>
+<p><b>Step 1 – scenarios.</b> 48 domains (business meetings, finance, hospital, pharmacy, airports, hotels, restaurants, IT
+operations, logistics, customs, education, HR, legal, manufacturing, retail, …) × 30 concrete situations with two participant
+roles each (1,440 scenarios), generated by an LLM (Claude Sonnet via the headless <code>claude -p</code> CLI; the same driver works
+with a local model through vLLM, <code>scripts/gen_vllm.py</code>).</p>
+<p><b>Step 2 – 4-way tuples with controlled switching.</b> For each scenario the LLM writes 8 different sentences (7–30 words,
+varied speech acts, concrete dates/amounts/names, no idioms), each with a faithful literal English, Korean (polite
+-습니다/-세요 register), Spanish and Japanese (です/ます) version, plus <b>two code-switched variants</b>. Every variant follows a
+per-sentence specification <code>matrix=X; embed=Y[,Z]; pattern=P</code> sampled by us (matrix language ko 35% / en 25% / ja 20% /
+es 20%; one embedded language 70%, two 30%; pattern <i>noun</i> 50%, <i>clause</i> 22%, <i>phrase</i> 18%, <i>verb</i> 10%). The matrix
+language supplies grammar, word order and all particles; embedded spans are copied verbatim from the parallel sentence.
+The patterns mirror the specification's examples: noun/NP insertion with native particles attached ("chest pain이",
+"meetingが", "El informe의 마지막 section을"), clause alternation at a clause boundary ("Aunque el tren llegó tarde, 우리는
+회의에 늦지 않았습니다."), phrase mixing, and Korean/Japanese light-verb constructions ("주문을 cancel하고", "confirmしてください").
+This design follows the linguistic evidence that natural ko–en / ja–en code-switching is predominantly insertional
+(nouns with matrix-language morphology) and that LLM generation is only reliable with explicit constraints.</p>
+<p><b>Step 3 – filtering.</b> (i) script checks: Korean fields must be Hangul-only, Japanese fields must contain kana/kanji, and
+the English/Spanish fields must be identified as English/Spanish by a language identifier (this removed ~2% of tuples whose
+en/es fields were swapped); (ii) each mixed variant must actually contain ≥2 scripts (or en+es by LID); (iii) an
+<b>English-pivot round trip</b>: every mixed variant is back-translated into English by an independent local model
+(Qwen3-14B-AWQ, vLLM) and variants with chrF++ &lt; 40 against the tuple's English sentence are dropped (≈2.4%);
+(iv) exact de-duplication and removal of any sentence overlapping the development set.</p>
+<p><b>Step 4 – assembling rows.</b> Each surviving mixed variant yields two rows (→ English, → Korean, references = the tuple's
+en / ko sentences); the four monolingual versions yield single-language rows (es/ja/ko → en, en/es/ja → ko), sub-sampled so that
+~30% of the rows are single-language; ~5% of tuples also contribute an identity row (en→en or ko→ko) so the model learns to copy
+text already in the target language. The final set has NNN tuples → NNN rows (Table X).</p>
+<p><b>Development set.</b> Because the official validation data was not yet available, we built our own: 384 tuples generated
+with a different prompt and different scenario seeds (and, as a robustness check, a second set generated by a different model
+family, Qwen3-8B), giving 1,535 items: mixed→en 384, mixed→ko 383, single→en 384, single→ko 384. All model selection used this set.</p>
+
+<h2>4. Inference design</h2>
+<p>The instruction is the default template from the specification (target language inserted), wrapped in the Qwen3 chat
+template with <code>enable_thinking=False</code>; no few-shot examples, no system prompt. Decoding is greedy
+(<code>do_sample=False</code>), at most 256 new tokens, stopping on <code>&lt;|im_end|&gt;</code>; the adapter is applied
+unmerged with HF transformers (we found vLLM's LoRA path changes ~25% of greedy outputs, so all reported numbers and the
+submitted predictions use the same HF path). Predictions are NFC-normalised and stripped.</p>
+
+<h2>5. Results</h2><p>PLACEHOLDER</p>
+<h2>6. Analysis</h2><p>PLACEHOLDER</p>
+</body></html>
