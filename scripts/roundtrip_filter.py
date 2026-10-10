@@ -43,6 +43,7 @@ def main():
     write_jsonl(args.out, list(done.values()) + todo)
     import statistics
     sc = [r[k] for r in todo for k in ("mixed1_rt", "mixed2_rt") if k in r]
+    if not sc: print("nothing new to score"); return
     print("rt mean", round(statistics.mean(sc), 2), "median", statistics.median(sc), "<40:", sum(s < 40 for s in sc), "<50:", sum(s < 50 for s in sc), "of", len(sc))
 
 if __name__ == "__main__":
