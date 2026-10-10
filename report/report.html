@@ -105,5 +105,32 @@ built from Qwen3-8B tuples (1,267 items). Baseline 68.82 → 5M 72.39 / 73.21 (w
 reversed 5M/50M order on this set: its Korean references follow Qwen3-8B's style, and the higher-capacity adapter fits the
 Claude reference style more tightly; the ordering on our main dev set (and on every subset of it) is 50M &gt; 5M.</p>
 
-<h2>6. Analysis</h2><p>PLACEHOLDER</p>
+<h2>6. Analysis</h2>
+<p><b>What the adapters fix.</b> The baseline's low Korean-target scores come mostly from catastrophic outputs rather than
+weak translation: it echoes or translates the instruction instead of the text, falls into repetition loops, or answers in the
+wrong language (4–5% of Korean-target items; e.g. for "You have five remaining vacation days this year, …" it emits
+"이해를 위해, 이 문장은 다음과 같이 번역됩니다." repeated until the token limit). After fine-tuning these disappear
+(wrong-language outputs: 8 of 767 Korean-target items for the 50M system; omissions with length ratio &lt; 0.75: 11 of 1,535;
+no empty outputs), and the model reliably copies the parts of the input that are already in the target language while
+translating the rest, e.g. "Please send me the 장학금 신청서를 by October 31, 그리고 어떤 서류를 첨부해야 하는지 알려 주세요." →
+"10월 31일까지 장학금 신청서를 보내 주시고, 어떤 서류를 첨부해야 하는지 알려 주세요." (exact match; baseline 8 chrF++).</p>
+<p><b>Switch-boundary handling.</b> Clause-level alternation and particle-attached insertions are handled well, including
+three-language inputs: "Could you tell me which 書類を持っていけばよいか, such as my passport, 病院の在職証明書, and two photos?"
+→ "여권, 병원 재직증명서, 사진 두 장이면 어떤 서류를 가져가야 하는지 알려 주시겠습니까?" (87). Mixed inputs with three
+languages score a few points below two-language inputs (ko target: 61.7 vs 65.0 chrF++ for the round-1 50M system), and
+Korean targets remain ~18 points below English targets for both single and mixed inputs, i.e. the difficulty is the
+Korean generation side, not the switch detection.</p>
+<p><b>Remaining failures</b> (items below 45 chrF++: 168 of 1,535 for the round-1 50M system, 159 of them with Korean target)
+are dominated by lexical and register choices rather than structural errors: "The final exam은 multiple-choice 40문항과
+essay 두 개이고, we will have two hours to finish." → reference "기말시험은 객관식 40문항과 서술형 2문항이며, 우리에게는 끝내는 데
+2시간이 주어집니다." vs output "최종 시험은 40문항의 단체형 문제와 자유형 문제 두 개로, 두 시간 동안 풀 수 있습니다." — the meaning
+is largely preserved but "단체형/자유형" are wrong terms for multiple-choice/essay. True meaning changes concentrate around
+Japanese-heavy inputs with English nouns inside Japanese grammar ("Will the reading responseのdeadlineは、Tuesday sectionではなく
+Thursday sectionに出席するstudentsでも同じですか" → output garbles "Tuesday section/Thursday section" into "화요일 쪽으로 Thursday
+쪽에"), where the 1.7B backbone's Japanese comprehension is the bottleneck. Because chrF++ is recall-weighted, the model's
+tendency to stay literal and complete (length ratio ≈1.0 on every subset) is the right behaviour for this metric.</p>
+<p><b>Budget comparison.</b> The 50M system beats the 5M system on all four subsets of the main dev set at every data size we
+tried (Table in 5.2), with the largest margin on Korean targets (+2.5 mixed→ko, +2.6 single→ko in round 1), consistent with the
+view that r=4 is capacity-limited for the Korean generation side. CHALLENGE_NOTE</p>
+
 </body></html>
