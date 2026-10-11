@@ -1,6 +1,6 @@
 #!/bin/bash
 # Produce predictions for the official test set with both systems.
-# Usage: scripts/predict_test.sh <test.jsonl> <adapter_5m_dir> <adapter_50m_dir> <student_id>
+# Usage: scripts/predict_test.sh <test.jsonl> outputs/final_5m/adapter outputs/final_50m/adapter <student_id>
 set -euo pipefail
 TEST=$1; A5=$2; A50=$3; SID=${4:-2026xxxxxx}
 export HF_HOME=~/hf HF_HUB_OFFLINE=1
