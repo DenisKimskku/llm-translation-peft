@@ -6,7 +6,7 @@
 body { font-family: "Noto Serif", "Noto Serif CJK KR", "Noto Serif CJK JP", serif; font-size: 11pt; line-height: 1.35; color: #111; }
 h1 { font-size: 16pt; margin: 0 0 4pt 0; } h2 { font-size: 12.5pt; margin: 12pt 0 4pt 0; } h3 { font-size: 11pt; margin: 8pt 0 2pt 0; }
 .meta { font-size: 10pt; color: #333; margin-bottom: 8pt; }
-table { border-collapse: collapse; font-size: 9.5pt; margin: 4pt 0 8pt 0; } th, td { border: 1px solid #999; padding: 2pt 5pt; text-align: right; } th:first-child, td:first-child { text-align: left; }
+table { border-collapse: collapse; font-size: 9.5pt; white-space: nowrap; margin: 4pt 0 8pt 0; } th, td { border: 1px solid #999; padding: 2pt 5pt; text-align: right; } th:first-child, td:first-child { text-align: left; }
 th { background: #eee; } .small { font-size: 9pt; } code { font-family: "Noto Sans Mono", monospace; font-size: 9.5pt; }
 .ex { font-size: 9.5pt; margin: 2pt 0 2pt 10pt; } .ex b { font-weight: 600; }
 </style></head><body>
@@ -88,10 +88,10 @@ official aggregation: single = mean(single→en, single→ko), mixed = mean(mixe
 The baseline is the untuned Qwen3-1.7B with the default instruction template, greedy, non-thinking.</p>
 <h3>5.1 Main results</h3>
 <table><tr><th>System</th><th>params</th><th>single→en</th><th>single→ko</th><th>mixed→en</th><th>mixed→ko</th><th>single</th><th>mixed</th><th>score</th><th>dev2</th></tr>
-<tr><td>Baseline Qwen3-1.7B (no PEFT)</td><td>0</td><td>66.08</td><td>31.85</td><td>72.74</td><td>39.50</td><td>48.97</td><td>56.12</td><td>53.98</td><td>68.82</td></tr>
-<tr><td>5M system (LoRA r=4)</td><td>4,358,144</td><td>78.79</td><td>58.19</td><td>83.79</td><td>67.31</td><td>68.49</td><td>75.55</td><td><b>73.43</b></td><td>73.24</td></tr>
-<tr><td>50M system (LoRA r=44)</td><td>47,939,584</td><td>79.98</td><td>60.51</td><td>83.99</td><td>68.76</td><td>70.25</td><td>76.38</td><td><b>74.54</b></td><td>71.41</td></tr>
-<tr><td>Copy-input baseline</td><td>–</td><td>7.38</td><td>2.20</td><td>29.86</td><td>20.30</td><td>4.79</td><td>25.08</td><td>18.99</td><td>–</td></tr></table>
+<tr><td>Baseline (no PEFT)</td><td>0</td><td>66.08</td><td>31.85</td><td>72.74</td><td>39.50</td><td>48.97</td><td>56.12</td><td>53.98</td><td>68.82</td></tr>
+<tr><td>5M (LoRA r=4)</td><td>4,358,144</td><td>78.79</td><td>58.19</td><td>83.79</td><td>67.31</td><td>68.49</td><td>75.55</td><td><b>73.43</b></td><td>73.24</td></tr>
+<tr><td>50M (LoRA r=44)</td><td>47,939,584</td><td>79.98</td><td>60.51</td><td>83.99</td><td>68.76</td><td>70.25</td><td>76.38</td><td><b>74.54</b></td><td>71.41</td></tr>
+<tr><td>Copy input</td><td>–</td><td>7.38</td><td>2.20</td><td>29.86</td><td>20.30</td><td>4.79</td><td>25.08</td><td>18.99</td><td>–</td></tr></table>
 <p>Both systems clear the baseline by a wide margin (+19.5 and +20.6 points), and the 50M system is ahead of the 5M system on
 every one of the four subsets (Success criterion 2), with the largest margins on Korean targets (+2.3 single→ko, +1.5
 mixed→ko). The gain over the baseline is largest for Korean targets (+26 to +29 points) because that is where the untuned
