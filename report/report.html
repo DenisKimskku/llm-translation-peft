@@ -80,7 +80,7 @@ family, Qwen3-8B), giving 1,535 items: mixed→en 384, mixed→ko 383, single→
 template with <code>enable_thinking=False</code>; no few-shot examples, no system prompt. Decoding is greedy
 (<code>do_sample=False</code>), at most 256 new tokens, stopping on <code>&lt;|im_end|&gt;</code>; the adapter is applied
 unmerged with HF transformers (we found vLLM's LoRA path changes ~25% of greedy outputs, so all reported numbers and the
-submitted predictions use the same HF path). Predictions are NFC-normalised and stripped.</p>
+submitted predictions use the same HF path). Predictions are NFC-normalised and stripped; for Korean targets commas are removed (see Section 5.5).</p>
 
 <h2>5. Results</h2>
 <p>All numbers are corpus-level chrF++ (sacrebleu <code>CHRF(word_order=2)</code>) on our development set (Section 3) under the
@@ -116,6 +116,26 @@ score rises). We therefore treat dev2 only as a robustness check: the ordering o
 specification's examples in style, is 50M &gt; 5M on every subset, and the official validation set should be used to confirm it.</p>
 
 
+
+<h3>5.5 Official validation set</h3>
+<p>The instructor's validation set (500 items: 150 single→en, 150 single→ko, 100 mixed→en, 100 mixed→ko; single inputs are
+Spanish, Japanese, Korean or English sentences, mixed inputs use all language pairs and many three- and four-language mixes)
+arrived after the systems above were trained. Scores below use it only for selection; its references were never used for training.</p>
+<table><tr><th>System (official validation)</th><th>single→en</th><th>single→ko</th><th>mixed→en</th><th>mixed→ko</th><th>single</th><th>mixed</th><th>score</th></tr>
+<tr><td>Baseline (no PEFT)</td><td>59.15</td><td>28.04</td><td>69.17</td><td>42.78</td><td>43.59</td><td>55.98</td><td>52.26</td></tr>
+<tr><td>5M (LoRA r=4)</td><td>60.93</td><td>45.04</td><td>74.93</td><td>67.68</td><td>52.99</td><td>71.31</td><td><b>65.81</b></td></tr>
+<tr><td>50M (LoRA attn r=20 / MLP r=60)</td><td>61.76</td><td>48.02</td><td>74.63</td><td>69.35</td><td>54.89</td><td>71.99</td><td><b>66.86</b></td></tr>
+<tr><td>50M (LoRA r=44 uniform)</td><td>61.67</td><td>46.60</td><td>74.41</td><td>67.54</td><td>54.14</td><td>70.98</td><td>65.93</td></tr></table>
+<p>Both systems again clear the baseline by a wide margin (+13.5 / +14.6). Two differences from our own dev set shaped the final
+choices. (i) The official references are freer than ours: the English references are natural rather than literal
+("has not yet reached the account", "the lift"), and the Korean references are concise, natural Korean that almost never
+uses commas (1 of 250 references, vs 27% of our Korean outputs). A probe in which a strong LLM translated 40 validation inputs
+either literally or "naturally" scored +6 chrF++ for the natural style on Korean targets but −2 on English targets, i.e. the
+Korean side of our training references is too literal. Removing commas from Korean outputs (a deterministic
+post-processing rule, now part of the inference design) is worth +0.5 on validation and is included in the table.
+(ii) On this set the MLP-heavy 50M allocation (attention r=20, MLP r=60; 49,315,840 parameters) beats the uniform r=44 adapter
+by +0.9, mostly on Korean targets, so it is the submitted 50M system; it is ahead of the 5M system on three of the four subsets
+and 0.3 behind on mixed→en.</p>
 <h3>5.4 Additional controlled comparisons (50M budget, same data)</h3>
 <table><tr><th>50M variant</th><th>params</th><th>single→en</th><th>single→ko</th><th>mixed→en</th><th>mixed→ko</th><th>score</th><th>dev2</th></tr>
 <tr><td>uniform r=44 (submitted)</td><td>47,939,584</td><td>79.98</td><td>60.51</td><td>83.99</td><td>68.76</td><td><b>74.54</b></td><td>71.41</td></tr>

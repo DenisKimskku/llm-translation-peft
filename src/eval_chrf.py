@@ -46,7 +46,7 @@ def main():
         typ = "mixed" if str(typ).lower().startswith(("mix", "code", "cs")) else "single"
         tgt = norm_target(get(r, "target", "target_lang", "target_language", "tgt"))
         hyp = unicodedata.normalize("NFC", str(get(p, args.pred_field, "output", "translation", default="")).strip())
-        ref = unicodedata.normalize("NFC", str(get(r, "reference", "ref", "translation", "output")).strip())
+        ref = unicodedata.normalize("NFC", str(get(r, "reference", "answer", "ref", "translation", "output")).strip())
         buckets[(typ, tgt)][0].append(hyp); buckets[(typ, tgt)][1].append(ref)
     chrf = CHRF(word_order=2)
     res = {}

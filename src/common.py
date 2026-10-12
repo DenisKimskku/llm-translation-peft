@@ -40,3 +40,16 @@ def write_jsonl(path: str, rows: Iterable[Dict[str, Any]]):
     with open(path, "w", encoding="utf-8") as f:
         for r in rows:
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
+
+
+def postprocess(pred: str, target: str) -> str:
+    """Deterministic output normalisation (part of the inference design, selected on the official validation set):
+    NFC + strip; for Korean targets remove commas (Korean references in this task do not use them) and
+    map full-width sentence punctuation to ASCII."""
+    import re, unicodedata
+    p = unicodedata.normalize("NFC", pred).strip()
+    if norm_target(target) == "ko":
+        p = re.sub(r"\s*[,\uff0c\u3001]\s*", " ", p)
+        p = p.replace("\u3002", ".").replace("\uff1f", "?").replace("\uff01", "!")
+        p = re.sub(r"\s+", " ", p).strip()
+    return p

@@ -5,7 +5,7 @@ Input rows need: text (or input), target (en|ko); id is preserved if present.
 """
 import argparse, json, os, sys, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import BACKBONE, DEFAULT_TEMPLATE, build_prompt, read_jsonl, write_jsonl
+from common import BACKBONE, DEFAULT_TEMPLATE, build_prompt, read_jsonl, write_jsonl, postprocess
 
 def get(row, *names):
     for n in names:
@@ -56,7 +56,7 @@ def main():
     ap.add_argument("--template-file", default=None); ap.add_argument("--system", default=None)
     ap.add_argument("--batch-size", type=int, default=32); ap.add_argument("--max-new-tokens", type=int, default=256)
     ap.add_argument("--merge", action="store_true"); ap.add_argument("--max-lora-rank", type=int, default=64)
-    ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--limit", type=int, default=0); ap.add_argument("--raw", action="store_true", help="disable output post-processing")
     args = ap.parse_args()
     template = open(args.template_file, encoding="utf-8").read().strip("\n") if args.template_file else DEFAULT_TEMPLATE
     if args.adapter and os.path.exists(os.path.join(args.adapter, "train_meta.json")) and not args.template_file:
@@ -76,7 +76,8 @@ def main():
     out = []
     for r, p in zip(rows, preds):
         o = {"id": r.get("id")} if "id" in r else {}
-        o.update({"text": get(r, "text", "input", "source", "src"), "target": get(r, "target", "target_lang", "target_language", "tgt"), "prediction": p})
+        tgt = get(r, "target", "target_lang", "target_language", "tgt")
+        o.update({"text": get(r, "text", "input", "source", "src"), "target": tgt, "prediction": p if args.raw else postprocess(p, tgt), "raw_prediction": p})
         out.append(o)
     write_jsonl(args.out, out)
 

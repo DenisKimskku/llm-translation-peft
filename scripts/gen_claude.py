@@ -62,6 +62,8 @@ def main():
             with lock:
                 if rows is None:
                     n_fail += 1; print(f"FAIL seed {seed['seed_id']}: {err}", flush=True); continue
+                if rows and all(isinstance(r, str) for r in rows):   # ALLOW_STRINGS: one row holding the whole array
+                    rows = [{"outputs": rows}]
                 for r in rows:
                     if isinstance(r, dict):
                         r["_seed"] = seed; f.write(json.dumps(r, ensure_ascii=False) + "\n"); n_rows += 1

@@ -1,0 +1,6 @@
+You are a professional Korean translator polishing a translation dataset. Below are {n} Korean sentences that are faithful but somewhat literal translations. Rewrite each one the way a skilled Korean translator would write it for native readers: natural, concise, idiomatic Korean with the most common phrasing a native speaker would use, in polite formal register (statements end in -습니다/-입니다, requests in -세요/-주세요/-십시오). Keep EVERY piece of information (numbers, dates, names, conditions, negations) and do not add anything. Prefer a single clause flow without commas unless truly needed; do not use quotation marks or parentheses. If a sentence is already natural, keep it as is.
+
+Sentences (one per line, numbered):
+{sentences}
+
+Output ONLY a JSON array of {n} strings, in the same order.

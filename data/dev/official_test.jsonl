@@ -1,0 +1,500 @@
+{"id": 0, "input": "장갑을 끼면 터치 입력이 잘 인식되지 않아 현장용 화면의 버튼을 키웠습니다.", "target_language": "en", "input_type": "single"}
+{"id": 1, "input": "자문 계약을 연장할 때는 단가가 같더라도 월별 투입 시간을 다시 합의해야 합니다.", "target_language": "en", "input_type": "single"}
+{"id": 2, "input": "환자가 음식을 삼키기 어렵다고 말해 간호사는 식사 형태를 담당자와 상의했습니다.", "target_language": "en", "input_type": "single"}
+{"id": 3, "input": "천장에 새 설비를 달기 전에는 무게뿐 아니라 점검구를 열 공간도 확보해야 합니다.", "target_language": "en", "input_type": "single"}
+{"id": 4, "input": "상품을 묶음으로 판매하면서 개별 포장에 적힌 가격은 가렸습니다.", "target_language": "en", "input_type": "single"}
+{"id": 5, "input": "자료를 검토할 시간을 확보하려고 설명회 접수를 하루 일찍 마감했습니다.", "target_language": "en", "input_type": "single"}
+{"id": 6, "input": "장비를 현금으로 구입해 설비 자산은 늘었지만 은행 예금은 줄었습니다.", "target_language": "en", "input_type": "single"}
+{"id": 7, "input": "수도 계량기는 계속 돌아가는데 건물 안에서는 물을 쓰는 곳이 없었습니다.", "target_language": "en", "input_type": "single"}
+{"id": 8, "input": "인증서를 갱신해도 기존 연결에는 바로 적용되지 않으므로 새 연결에서 유효 기간을 확인하세요.", "target_language": "en", "input_type": "single"}
+{"id": 9, "input": "촬영은 끝났지만 움직임 때문에 영상 일부가 흐려 다시 확인하고 있습니다.", "target_language": "en", "input_type": "single"}
+{"id": 10, "input": "교육 수료증은 출석만으로 발급되지 않고 마지막 실습까지 마쳐야 받을 수 있습니다.", "target_language": "en", "input_type": "single"}
+{"id": 11, "input": "폐배터리는 일반 금속 폐기물과 다른 용기에 모읍니다.", "target_language": "en", "input_type": "single"}
+{"id": 12, "input": "체험 후기는 유용했지만 무상 제공 사실이 빠져 있어 표시를 추가했습니다.", "target_language": "en", "input_type": "single"}
+{"id": 13, "input": "공기 압력을 낮추자 전력은 줄었지만 일부 공구의 작동이 느려졌습니다.", "target_language": "en", "input_type": "single"}
+{"id": 14, "input": "재입고 알림을 신청한 고객에게도 구매 순서가 보장되지는 않습니다.", "target_language": "en", "input_type": "single"}
+{"id": 15, "input": "자동문 센서는 문 양쪽의 접근을 감지합니다.", "target_language": "en", "input_type": "single"}
+{"id": 16, "input": "반대로 표현된 문항의 점수를 뒤집지 않아 총점이 잘못 계산되었습니다.", "target_language": "en", "input_type": "single"}
+{"id": 17, "input": "회의실 칸막이를 옮긴 뒤 스위치와 실제로 켜지는 조명이 맞지 않았습니다.", "target_language": "en", "input_type": "single"}
+{"id": 18, "input": "윤활유 공급관이 꺾여 베어링까지 기름이 충분히 가지 않았습니다.", "target_language": "en", "input_type": "single"}
+{"id": 19, "input": "이번 채용은 퇴사자 충원이어서 전체 정원은 늘지 않습니다.", "target_language": "en", "input_type": "single"}
+{"id": 20, "input": "입력 오류를 고친 뒤에도 원래 수치는 변경 이력에 남겨 두었습니다.", "target_language": "en", "input_type": "single"}
+{"id": 21, "input": "회수 가능성이 낮은 채권은 정상 채권과 구분해 보고했습니다.", "target_language": "en", "input_type": "single"}
+{"id": 22, "input": "연습 시행의 점수는 본 실험 결과에 포함하지 않았습니다.", "target_language": "en", "input_type": "single"}
+{"id": 23, "input": "작업을 재개할 때는 남은 원료의 색이 같더라도 보관 중 다른 재료가 섞이지 않았는지 확인하세요.", "target_language": "en", "input_type": "single"}
+{"id": 24, "input": "큰 상자 아래에 작은 상자가 깔려 적재 순서를 다시 정했습니다.", "target_language": "en", "input_type": "single"}
+{"id": 25, "input": "승강기 바닥과 층 바닥 사이에 단차가 생겨 담당자가 정지 위치를 점검했습니다.", "target_language": "en", "input_type": "single"}
+{"id": 26, "input": "반출 기록은 남았지만 빈 팔레트가 실제로 몇 개 회수되었는지는 확인되지 않았습니다.", "target_language": "en", "input_type": "single"}
+{"id": 27, "input": "환자는 보청기를 착용한 뒤에야 안내 방송을 알아들을 수 있었습니다.", "target_language": "en", "input_type": "single"}
+{"id": 28, "input": "급여 명세서에는 기본급과 시간외 수당이 나뉘어 표시됩니다.", "target_language": "en", "input_type": "single"}
+{"id": 29, "input": "분석 방법을 결과에 맞춰 바꿨다면 처음 계획한 분석과 추가 분석을 구분해서 보고하세요.", "target_language": "en", "input_type": "single"}
+{"id": 30, "input": "대조 조건에서도 같은 시간 동안 기다리게 해 대기 시간의 영향을 맞췄습니다.", "target_language": "en", "input_type": "single"}
+{"id": 31, "input": "문을 오래 열어 둔 날에는 설정 온도가 같아도 냉장 창고의 전력 사용량이 늘었습니다.", "target_language": "en", "input_type": "single"}
+{"id": 32, "input": "상환 계획을 검토할 때는 이자만 내는 기간이 끝난 뒤 월 납입액이 얼마나 늘어나는지도 확인하세요.", "target_language": "en", "input_type": "single"}
+{"id": 33, "input": "창고 통로를 임시 보관 장소로 쓰더라도 비상 통로와 지게차 회전 구역은 비워 두세요.", "target_language": "en", "input_type": "single"}
+{"id": 34, "input": "자주 출고하는 제품은 포장대 가까이에 배치합니다.", "target_language": "en", "input_type": "single"}
+{"id": 35, "input": "체온이 측정할 때마다 달라 담당자는 기기를 바꾸기 전에 측정 위치와 방법부터 확인했습니다.", "target_language": "en", "input_type": "single"}
+{"id": 36, "input": "조립 설명서에는 나사를 조이는 순서가 그림으로 나와 있습니다.", "target_language": "en", "input_type": "single"}
+{"id": 37, "input": "화면 확대 비율은 계정이 아니라 브라우저별로 저장됩니다.", "target_language": "en", "input_type": "single"}
+{"id": 38, "input": "작업자가 바뀌어도 혼합 비율은 같게 유지하도록 저울 옆에 기준표를 붙였습니다.", "target_language": "en", "input_type": "single"}
+{"id": 39, "input": "세척 과정에서 나온 거품 때문에 폐수의 탁도를 바로 측정하지 못했습니다.", "target_language": "en", "input_type": "single"}
+{"id": 40, "input": "외화 매출을 기준 통화로 환산하면서 환율 차이로 인한 손실이 생겼습니다.", "target_language": "en", "input_type": "single"}
+{"id": 41, "input": "부품을 뒤집어 끼우자 잠금 장치가 끝까지 닫히지 않았습니다.", "target_language": "en", "input_type": "single"}
+{"id": 42, "input": "바코드가 접힌 부분에 붙어 있어 스캐너로 한 번에 읽히지 않았습니다.", "target_language": "en", "input_type": "single"}
+{"id": 43, "input": "출장 중 발생한 통신비는 영수증별로 제출합니다.", "target_language": "en", "input_type": "single"}
+{"id": 44, "input": "재활실은 환자별 운동 강도를 기록합니다.", "target_language": "en", "input_type": "single"}
+{"id": 45, "input": "문서를 삭제한 뒤에도 검색 결과에 제목이 남아 있어 색인을 다시 만들었습니다.", "target_language": "en", "input_type": "single"}
+{"id": 46, "input": "회원 등급이 올랐더라도 이미 확정된 주문에는 새 적립률이 적용되지 않도록 설정했습니다.", "target_language": "en", "input_type": "single"}
+{"id": 47, "input": "비회원 주문은 주문 번호와 연락처로 조회합니다.", "target_language": "en", "input_type": "single"}
+{"id": 48, "input": "재활용품 무게를 보고할 때는 젖은 포장재를 포함했는지 밝혀 다른 달의 기록과 비교할 수 있게 해 주세요.", "target_language": "en", "input_type": "single"}
+{"id": 49, "input": "회의 자막에는 발언 내용이 나오지만 발언자 이름은 표시되지 않습니다.", "target_language": "en", "input_type": "single"}
+{"id": 50, "input": "Before isolating the water supply, check whether the same valve also serves the occupied office next door.", "target_language": "ko", "input_type": "single"}
+{"id": 51, "input": "A nearby tree shades part of the roof array in the early morning.", "target_language": "ko", "input_type": "single"}
+{"id": 52, "input": "The reviewers saw coded samples and did not know which treatment each sample had received.", "target_language": "ko", "input_type": "single"}
+{"id": 53, "input": "The window closes fully, yet rain enters through the joint below the frame.", "target_language": "ko", "input_type": "single"}
+{"id": 54, "input": "The patient could hear the instructions but needed larger print to read the consent form.", "target_language": "ko", "input_type": "single"}
+{"id": 55, "input": "Verified purchases are marked in the review list, while other reviews remain visible without the badge.", "target_language": "ko", "input_type": "single"}
+{"id": 56, "input": "The machine is still in use even though its purchase cost has been fully depreciated.", "target_language": "ko", "input_type": "single"}
+{"id": 57, "input": "The entrance mat curls at the corners, creating a trip hazard for visitors.", "target_language": "ko", "input_type": "single"}
+{"id": 58, "input": "Repeated payment requests carry the same identifier to prevent the customer from being charged twice.", "target_language": "ko", "input_type": "single"}
+{"id": 59, "input": "The seal fits the groove, but its lip faces the wrong direction.", "target_language": "ko", "input_type": "single"}
+{"id": 60, "input": "The waste register separates recyclable metal from mixed scrap.", "target_language": "ko", "input_type": "single"}
+{"id": 61, "input": "The firewall blocks incoming traffic on unused ports.", "target_language": "ko", "input_type": "single"}
+{"id": 62, "input": "Each production batch has its own traceability code.", "target_language": "ko", "input_type": "single"}
+{"id": 63, "input": "The screws were tightened in the wrong order, leaving the cover slightly tilted.", "target_language": "ko", "input_type": "single"}
+{"id": 64, "input": "The gift message was saved, but the buyer did not select gift wrapping.", "target_language": "ko", "input_type": "single"}
+{"id": 65, "input": "The store lowered the quantity limit after one customer ordered most of the available stock.", "target_language": "ko", "input_type": "single"}
+{"id": 66, "input": "The minutes list a separate owner for each action item.", "target_language": "ko", "input_type": "single"}
+{"id": 67, "input": "If the bank statement combines several deposits, match them to individual sales before closing the accounts.", "target_language": "ko", "input_type": "single"}
+{"id": 68, "input": "If two departments request the same specialist, give priority to work that blocks the next stage.", "target_language": "ko", "input_type": "single"}
+{"id": 69, "input": "Products with the earliest expiry dates are placed at the front of the picking shelf.", "target_language": "ko", "input_type": "single"}
+{"id": 70, "input": "The exchange rate in the estimate differs from the rate used when the purchase was settled.", "target_language": "ko", "input_type": "single"}
+{"id": 71, "input": "The tap delivers hot water eventually, but the delay is longer on the upper floors.", "target_language": "ko", "input_type": "single"}
+{"id": 72, "input": "The water isolation valves are labeled by the area they serve.", "target_language": "ko", "input_type": "single"}
+{"id": 73, "input": "The rehabilitation record includes the distance walked during each session.", "target_language": "ko", "input_type": "single"}
+{"id": 74, "input": "The consultant can advise on the process but has no authority to approve purchases.", "target_language": "ko", "input_type": "single"}
+{"id": 75, "input": "The cuff was too loose, so the nurse repeated the blood pressure measurement.", "target_language": "ko", "input_type": "single"}
+{"id": 76, "input": "Before changing the scheduled task, check whether the server clock uses local time or universal time.", "target_language": "ko", "input_type": "single"}
+{"id": 77, "input": "If the delivery requires a tail lift, confirm the vehicle equipment before accepting a standard truck booking.", "target_language": "ko", "input_type": "single"}
+{"id": 78, "input": "The adhesive had thickened before use, so the operator prepared a fresh mixture.", "target_language": "ko", "input_type": "single"}
+{"id": 79, "input": "The allocation list was generated before the first participant arrived.", "target_language": "ko", "input_type": "single"}
+{"id": 80, "input": "The driver took a longer route because roadworks blocked the usual entrance.", "target_language": "ko", "input_type": "single"}
+{"id": 81, "input": "If the product comes in several sizes, show the selected size in the basket so customers can check it before paying.", "target_language": "ko", "input_type": "single"}
+{"id": 82, "input": "Rainwater entered the waste container, increasing its measured weight without increasing the amount of waste.", "target_language": "ko", "input_type": "single"}
+{"id": 83, "input": "The review panel returned the proposal because the expected benefits were not quantified.", "target_language": "ko", "input_type": "single"}
+{"id": 84, "input": "Before treating the lower meter reading as a saving, check whether a replacement meter started from zero during the period.", "target_language": "ko", "input_type": "single"}
+{"id": 85, "input": "The patient remembered the dose but could not recall when the last tablet was taken.", "target_language": "ko", "input_type": "single"}
+{"id": 86, "input": "The chart looks correct on screen, but its labels are missing from the accessible version.", "target_language": "ko", "input_type": "single"}
+{"id": 87, "input": "The petty cash book records each withdrawal separately.", "target_language": "ko", "input_type": "single"}
+{"id": 88, "input": "Several readings came from the same participant, so they were not counted as additional participants.", "target_language": "ko", "input_type": "single"}
+{"id": 89, "input": "We reserved the workshop space, but the equipment must be booked through another team.", "target_language": "ko", "input_type": "single"}
+{"id": 90, "input": "The compressor kept cycling after production stopped because air was escaping through a loose joint.", "target_language": "ko", "input_type": "single"}
+{"id": 91, "input": "If the material container is refilled during a run, record the new lot number without removing the previous one.", "target_language": "ko", "input_type": "single"}
+{"id": 92, "input": "Before arranging transport home, the coordinator checked whether someone would be there to help the patient indoors.", "target_language": "ko", "input_type": "single"}
+{"id": 93, "input": "The size chart lists garment measurements rather than body measurements.", "target_language": "ko", "input_type": "single"}
+{"id": 94, "input": "The cashier found a shortage after excluding the cash reserved for change.", "target_language": "ko", "input_type": "single"}
+{"id": 95, "input": "A confidence interval that includes zero does not by itself prove that the intervention has no effect.", "target_language": "ko", "input_type": "single"}
+{"id": 96, "input": "The password manager filled in an old username, so the sign-in attempt was rejected.", "target_language": "ko", "input_type": "single"}
+{"id": 97, "input": "The measurements were converted to the same unit before the totals were calculated.", "target_language": "ko", "input_type": "single"}
+{"id": 98, "input": "Several small orders were combined into one consignment to reduce handling.", "target_language": "ko", "input_type": "single"}
+{"id": 99, "input": "The pallet fits through the door, but the forklift cannot turn inside the loading bay.", "target_language": "ko", "input_type": "single"}
+{"id": 100, "input": "Antes de perforar la pared, consulta el plano para comprobar si pasan cables por el punto elegido.", "target_language": "en", "input_type": "single"}
+{"id": 101, "input": "La hoja de proceso indica el sentido de montaje del resorte.", "target_language": "en", "input_type": "single"}
+{"id": 102, "input": "El interruptor de seguridad detiene la máquina al abrirse la cubierta.", "target_language": "en", "input_type": "single"}
+{"id": 103, "input": "Antes de repartir el excedente, comprueba si parte del efectivo está comprometida para pagar salarios.", "target_language": "en", "input_type": "single"}
+{"id": 104, "input": "El equipo dejó de enviar informes diarios porque el cliente prefirió un resumen semanal.", "target_language": "en", "input_type": "single"}
+{"id": 105, "input": "El viento dispersó parte del material ligero antes de que se cerrara el depósito.", "target_language": "en", "input_type": "single"}
+{"id": 106, "input": "Antes de ofrecer una talla alternativa, comprueba si la tabla corresponde al cuerpo o a la prenda terminada.", "target_language": "en", "input_type": "single"}
+{"id": 107, "input": "Antes de consolidar los pedidos, comprueba si alguno necesita entregarse en una franja horaria distinta.", "target_language": "en", "input_type": "single"}
+{"id": 108, "input": "La puerta roza el suelo solo cuando cambia mucho la humedad del ambiente.", "target_language": "en", "input_type": "single"}
+{"id": 109, "input": "Los evaluadores coincidieron en la mayoría de los casos, pero discutieron los ejemplos ambiguos.", "target_language": "en", "input_type": "single"}
+{"id": 110, "input": "La pantalla indica que la operación terminó, aunque el registro interno muestra un error.", "target_language": "en", "input_type": "single"}
+{"id": 111, "input": "Los envases pueden reutilizarse, pero necesitan una inspección después de cada viaje.", "target_language": "en", "input_type": "single"}
+{"id": 112, "input": "Aunque el proveedor acepte participar, no publiques su propuesta sin comprobar las condiciones de confidencialidad.", "target_language": "en", "input_type": "single"}
+{"id": 113, "input": "Los pagos realizados en el entorno de prueba no generan cargos reales.", "target_language": "en", "input_type": "single"}
+{"id": 114, "input": "La vacante se cubrirá de forma temporal mientras termina el proceso de selección.", "target_language": "en", "input_type": "single"}
+{"id": 115, "input": "Antes de repetir la imagen, el técnico explicó cómo mantener la posición sin aumentar la molestia.", "target_language": "en", "input_type": "single"}
+{"id": 116, "input": "El cliente añadió una dedicatoria, pero el texto excedía el espacio disponible en la tarjeta.", "target_language": "en", "input_type": "single"}
+{"id": 117, "input": "El camión no pudo acercarse al muelle porque otro vehículo ocupaba la zona de maniobra.", "target_language": "en", "input_type": "single"}
+{"id": 118, "input": "La búsqueda incluye artículos agotados para que puedan consultarse sus especificaciones.", "target_language": "en", "input_type": "single"}
+{"id": 119, "input": "El archivo exportado separa las columnas con punto y coma.", "target_language": "en", "input_type": "single"}
+{"id": 120, "input": "El operario redujo el desperdicio ajustando la distribución de las piezas sobre la chapa.", "target_language": "en", "input_type": "single"}
+{"id": 121, "input": "El formulario permite elegir más de una categoría de respuesta.", "target_language": "en", "input_type": "single"}
+{"id": 122, "input": "El paciente completó el ejercicio sentado, pero necesitó ayuda para ponerse de pie.", "target_language": "en", "input_type": "single"}
+{"id": 123, "input": "La enfermera señaló la zona de la molestia en un dibujo para evitar confusiones.", "target_language": "en", "input_type": "single"}
+{"id": 124, "input": "El agua vuelve al lavabo porque el conducto compartido está obstruido más adelante.", "target_language": "en", "input_type": "single"}
+{"id": 125, "input": "La página permite comparar hasta tres productos a la vez.", "target_language": "en", "input_type": "single"}
+{"id": 126, "input": "El código de cada muestra se guardó separado de los datos de contacto.", "target_language": "en", "input_type": "single"}
+{"id": 127, "input": "Si cancelas una tarea en la cola, comprueba que no haya empezado antes de enviar otra igual.", "target_language": "en", "input_type": "single"}
+{"id": 128, "input": "El pedido se preparó con cajas completas, aunque el cliente había solicitado unidades sueltas.", "target_language": "en", "input_type": "single"}
+{"id": 129, "input": "El anuncio llevó a la página de una categoría, no al producto que aparecía en la imagen.", "target_language": "en", "input_type": "single"}
+{"id": 130, "input": "La propuesta recibió apoyo técnico, pero el departamento comercial pidió revisar sus objetivos.", "target_language": "en", "input_type": "single"}
+{"id": 131, "input": "El contenedor de residuos lleva una etiqueta con su peso vacío.", "target_language": "en", "input_type": "single"}
+{"id": 132, "input": "La carga se distribuyó de nuevo para equilibrar el peso entre los ejes.", "target_language": "en", "input_type": "single"}
+{"id": 133, "input": "La sala de espera dispone de asientos con apoyabrazos.", "target_language": "en", "input_type": "single"}
+{"id": 134, "input": "Si el indicador muestra carga completa, confirma cuánto tiempo duró la prueba antes de comparar las baterías.", "target_language": "en", "input_type": "single"}
+{"id": 135, "input": "Antes de cambiar el programa de corte, confirma que la lámina esté colocada con la cara correcta hacia arriba.", "target_language": "en", "input_type": "single"}
+{"id": 136, "input": "El informe de caja se prepara al final de cada turno.", "target_language": "en", "input_type": "single"}
+{"id": 137, "input": "La sala de máquinas permanece cerrada fuera del horario de revisión.", "target_language": "en", "input_type": "single"}
+{"id": 138, "input": "La agenda reserva diez minutos para las preguntas del personal.", "target_language": "en", "input_type": "single"}
+{"id": 139, "input": "La previsión usa los cobros esperados, no todas las facturas emitidas.", "target_language": "en", "input_type": "single"}
+{"id": 140, "input": "El detector de presencia apaga las luces cuando la persona permanece sentada sin moverse.", "target_language": "en", "input_type": "single"}
+{"id": 141, "input": "El cuestionario se leyó en voz alta porque el paciente no podía ver bien las letras.", "target_language": "en", "input_type": "single"}
+{"id": 142, "input": "Cada pasillo tiene señales visibles desde ambos extremos.", "target_language": "en", "input_type": "single"}
+{"id": 143, "input": "El banco pidió una segunda firma porque la autorización anterior solo cubría importes menores.", "target_language": "en", "input_type": "single"}
+{"id": 144, "input": "La nueva mezcla produce menos espuma, pero necesita más tiempo de reposo.", "target_language": "en", "input_type": "single"}
+{"id": 145, "input": "La planta cambió el horario de limpieza para evitar que dos bombas arrancaran a la vez.", "target_language": "en", "input_type": "single"}
+{"id": 146, "input": "Antes de combinar los resultados, comprueba si las escalas asignan el mismo significado a una puntuación alta.", "target_language": "en", "input_type": "single"}
+{"id": 147, "input": "La aplicación solicita la ubicación solo mientras está abierta.", "target_language": "en", "input_type": "single"}
+{"id": 148, "input": "La empresa vendió el vehículo por menos de su valor registrado en los libros.", "target_language": "en", "input_type": "single"}
+{"id": 149, "input": "La grabación empezó tarde, por lo que faltan los primeros segundos de la tarea.", "target_language": "en", "input_type": "single"}
+{"id": 150, "input": "Aunque la pendiente parezca pequeña, comprueba si la rampa permite abrir la puerta sin bloquear el paso.", "target_language": "ko", "input_type": "single"}
+{"id": 151, "input": "Aunque el contador marque la cantidad prevista, verifica que no incluya las unidades usadas para ajustar la máquina.", "target_language": "ko", "input_type": "single"}
+{"id": 152, "input": "La valoración media subió después de retirar opiniones duplicadas del mismo comprador.", "target_language": "ko", "input_type": "single"}
+{"id": 153, "input": "Los recipientes se numeraron para evitar mezclar materiales de distintas formulaciones.", "target_language": "ko", "input_type": "single"}
+{"id": 154, "input": "Aunque el agua parezca limpia, mantén separado el circuito de lavado hasta conocer el resultado del análisis.", "target_language": "ko", "input_type": "single"}
+{"id": 155, "input": "La barandilla se mueve al apoyarse porque una fijación se ha soltado.", "target_language": "ko", "input_type": "single"}
+{"id": 156, "input": "El grifo gotea incluso con la llave cerrada, por lo que se revisará la junta interior.", "target_language": "ko", "input_type": "single"}
+{"id": 157, "input": "El rodillo deja una marca repetida porque tiene suciedad adherida en un punto.", "target_language": "ko", "input_type": "single"}
+{"id": 158, "input": "La compresión redujo el tamaño del informe, pero las imágenes perdieron nitidez.", "target_language": "ko", "input_type": "single"}
+{"id": 159, "input": "Si delegas una tarea, indica también quién debe resolver las dudas cuando no estés disponible.", "target_language": "ko", "input_type": "single"}
+{"id": 160, "input": "La producción nocturna utiliza la misma maquinaria, pero no necesita encender todas las luces del almacén.", "target_language": "ko", "input_type": "single"}
+{"id": 161, "input": "El gasto de este viaje se cargó al departamento equivocado.", "target_language": "ko", "input_type": "single"}
+{"id": 162, "input": "La separación mejoró después de colocar imágenes de los materiales en cada contenedor.", "target_language": "ko", "input_type": "single"}
+{"id": 163, "input": "Las aportaciones de los socios figuran en una cuenta separada.", "target_language": "ko", "input_type": "single"}
+{"id": 164, "input": "El taller se repetirá por la tarde para quienes atienden al público por la mañana.", "target_language": "ko", "input_type": "single"}
+{"id": 165, "input": "El médico preguntó si la molestia aparecía en reposo o solo durante el movimiento.", "target_language": "ko", "input_type": "single"}
+{"id": 166, "input": "El conductor solicitó instrucciones porque la dirección indicaba un acceso reservado a peatones.", "target_language": "ko", "input_type": "single"}
+{"id": 167, "input": "La invitación se envió a todos, pero la participación fue voluntaria.", "target_language": "ko", "input_type": "single"}
+{"id": 168, "input": "La señal del aparcamiento apunta a una puerta que ahora se usa solo para el personal.", "target_language": "ko", "input_type": "single"}
+{"id": 169, "input": "Los productos reacondicionados tienen una sección propia en el catálogo.", "target_language": "ko", "input_type": "single"}
+{"id": 170, "input": "La cinta avanza, pero el alimentador no entrega piezas a intervalos regulares.", "target_language": "ko", "input_type": "single"}
+{"id": 171, "input": "Aunque quede saldo, no autorices un retiro que supere el límite acordado para los retiros de caja.", "target_language": "ko", "input_type": "single"}
+{"id": 172, "input": "Las respuestas abiertas se clasificaron después de acordar ejemplos para cada categoría.", "target_language": "ko", "input_type": "single"}
+{"id": 173, "input": "La empresa cobró un dividendo, pero su participación en la otra sociedad no cambió.", "target_language": "ko", "input_type": "single"}
+{"id": 174, "input": "La mercancía pasó directamente del vehículo de entrada al de reparto sin almacenarse.", "target_language": "ko", "input_type": "single"}
+{"id": 175, "input": "La impresora coloca el reverso al revés cuando se selecciona el borde de encuadernación incorrecto.", "target_language": "ko", "input_type": "single"}
+{"id": 176, "input": "La anotación del turno de noche se incorporó al resumen antes del cambio de personal.", "target_language": "ko", "input_type": "single"}
+{"id": 177, "input": "Las estanterías muestran la carga máxima permitida por nivel.", "target_language": "ko", "input_type": "single"}
+{"id": 178, "input": "Los asistentes recibieron el mismo material, aunque participaron en sesiones distintas.", "target_language": "ko", "input_type": "single"}
+{"id": 179, "input": "El gráfico muestra el número de observaciones de cada categoría.", "target_language": "ko", "input_type": "single"}
+{"id": 180, "input": "La fecha se guardó sin la hora, de modo que no puede saberse qué registro llegó primero ese día.", "target_language": "ko", "input_type": "single"}
+{"id": 181, "input": "Aunque el comprador acepte un sustituto, confirma si necesita todos los accesorios incluidos en el producto original.", "target_language": "ko", "input_type": "single"}
+{"id": 182, "input": "La entrega del informe depende de una encuesta que todavía no ha terminado.", "target_language": "ko", "input_type": "single"}
+{"id": 183, "input": "El operario registra cuántas veces se utiliza cada cuchilla.", "target_language": "ko", "input_type": "single"}
+{"id": 184, "input": "La silla se ajustó a la altura del paciente antes de comenzar la sesión.", "target_language": "ko", "input_type": "single"}
+{"id": 185, "input": "Aunque las cajas lleven el mismo código, no las mezcles si corresponden a fechas de caducidad diferentes.", "target_language": "ko", "input_type": "single"}
+{"id": 186, "input": "En el modo de pantalla completa, la barra de herramientas aparece al mover el cursor hacia arriba.", "target_language": "ko", "input_type": "single"}
+{"id": 187, "input": "El buscador reconoce el número del artículo, pero no las abreviaturas usadas por algunos clientes.", "target_language": "ko", "input_type": "single"}
+{"id": 188, "input": "Aunque la familia conocía el procedimiento, el personal volvió a explicarlo al paciente antes de pedir su consentimiento.", "target_language": "ko", "input_type": "single"}
+{"id": 189, "input": "El informe incluye el ruido medido en el límite del recinto.", "target_language": "ko", "input_type": "single"}
+{"id": 190, "input": "El embalaje se infló durante el transporte, pero el cierre permaneció intacto.", "target_language": "ko", "input_type": "single"}
+{"id": 191, "input": "La hoja de cuidados registra la cantidad de líquido ingerido.", "target_language": "ko", "input_type": "single"}
+{"id": 192, "input": "El sistema dejó de bombear porque el nivel del depósito había bajado demasiado.", "target_language": "ko", "input_type": "single"}
+{"id": 193, "input": "El atajo de teclado también puede utilizarse sin el ratón.", "target_language": "ko", "input_type": "single"}
+{"id": 194, "input": "Si un participante abandona la segunda sesión, conserva la primera medición sin inventar un valor para la que falta.", "target_language": "ko", "input_type": "single"}
+{"id": 195, "input": "Las plazas accesibles están junto al recorrido sin escalones.", "target_language": "ko", "input_type": "single"}
+{"id": 196, "input": "La caja contiene menos efectivo porque una parte se depositó antes del cierre.", "target_language": "ko", "input_type": "single"}
+{"id": 197, "input": "La tienda mantuvo la ficha del producto para atender consultas sobre reparaciones.", "target_language": "ko", "input_type": "single"}
+{"id": 198, "input": "La evaluación incluye comentarios de compañeros de otros departamentos.", "target_language": "ko", "input_type": "single"}
+{"id": 199, "input": "Antes de compartir una captura del modo de depuración, oculta las rutas que revelen nombres de carpetas privadas.", "target_language": "ko", "input_type": "single"}
+{"id": 200, "input": "冷却水の温度が上がったため、装置は出力を自動的に抑えました。", "target_language": "en", "input_type": "single"}
+{"id": 201, "input": "録音を聞き直したところ、同じ発言を二度書き起こしていたことが分かりました。", "target_language": "en", "input_type": "single"}
+{"id": 202, "input": "同じ作業を繰り返す場合でも、治具を外した後は位置合わせを最初から確認してください。", "target_language": "en", "input_type": "single"}
+{"id": 203, "input": "集計の単位が世帯だったため、同居する家族を別々に数えませんでした。", "target_language": "en", "input_type": "single"}
+{"id": 204, "input": "借入金の一覧には担保の有無も記載されています。", "target_language": "en", "input_type": "single"}
+{"id": 205, "input": "商品を比較する画面では、異なる単位の数値をそのまま並べていました。", "target_language": "en", "input_type": "single"}
+{"id": 206, "input": "待合室が混み合っていたため、感染症状のある患者を別の場所へ案内しました。", "target_language": "en", "input_type": "single"}
+{"id": 207, "input": "面接官の予定が合わず、候補者への連絡を先に済ませました。", "target_language": "en", "input_type": "single"}
+{"id": 208, "input": "入力必須の項目は赤く表示されますが、添付資料は任意です。", "target_language": "en", "input_type": "single"}
+{"id": 209, "input": "排熱の通り道を塞いでいた荷物を移したところ、装置の冷却にかかる時間が短くなりました。", "target_language": "en", "input_type": "single"}
+{"id": 210, "input": "月末の残高だけでは、月中に資金が不足したか分かりません。", "target_language": "en", "input_type": "single"}
+{"id": 211, "input": "容器のふたが閉まっていなかったため、粉末が湿気を吸って固まりました。", "target_language": "en", "input_type": "single"}
+{"id": 212, "input": "観察者は会話に参加せず発言の回数を記録しました。", "target_language": "en", "input_type": "single"}
+{"id": 213, "input": "レビューは編集できますが、購入済みの表示は利用者自身では変更できません。", "target_language": "en", "input_type": "single"}
+{"id": 214, "input": "案内板を移した結果、廊下の曲がり角からも行き先が分かるようになりました。", "target_language": "en", "input_type": "single"}
+{"id": 215, "input": "途中参加の担当者にも経緯が分かるよう、決定事項だけでなく判断の理由を残してください。", "target_language": "en", "input_type": "single"}
+{"id": 216, "input": "屋外照明の点灯時刻は季節に合わせて変更します。", "target_language": "en", "input_type": "single"}
+{"id": 217, "input": "作業台の表示は部品を取り付ける向きを示しています。", "target_language": "en", "input_type": "single"}
+{"id": 218, "input": "条件の提示順が結果に影響しないよう、参加者ごとに順番を入れ替えました。", "target_language": "en", "input_type": "single"}
+{"id": 219, "input": "雑音を抑える設定を強くすると、小さな声まで途切れることがあります。", "target_language": "en", "input_type": "single"}
+{"id": 220, "input": "同じ顧客宛てでも納品先の階が違う場合は、降ろす順番が分かるよう区分してください。", "target_language": "en", "input_type": "single"}
+{"id": 221, "input": "重い荷物を片側に寄せたため、運搬中に荷台が傾きました。", "target_language": "en", "input_type": "single"}
+{"id": 222, "input": "注文履歴から同じ組み合わせを再注文できます。", "target_language": "en", "input_type": "single"}
+{"id": 223, "input": "未処理の伝票が見つかった場合は、締め済みの帳簿を直接書き換えず担当者に確認してください。", "target_language": "en", "input_type": "single"}
+{"id": 224, "input": "研修の内容は同じですが、実習で使う道具は職種ごとに異なります。", "target_language": "en", "input_type": "single"}
+{"id": 225, "input": "回収した容器は洗浄して使いますが、変形したものは除いています。", "target_language": "en", "input_type": "single"}
+{"id": 226, "input": "まとめ買いの価格を示す際は、一個あたりの金額と一箱の数量を同じ場所に表示してください。", "target_language": "en", "input_type": "single"}
+{"id": 227, "input": "締め付けが強すぎたため、樹脂製のねじ穴がつぶれました。", "target_language": "en", "input_type": "single"}
+{"id": 228, "input": "蛇口を閉めた直後に音が出るため、配管の固定状態を調べています。", "target_language": "en", "input_type": "single"}
+{"id": 229, "input": "材料の端を先に切り落とすと、後の工程で位置を合わせやすくなります。", "target_language": "en", "input_type": "single"}
+{"id": 230, "input": "業務改善の提案は匿名でも提出できます。", "target_language": "en", "input_type": "single"}
+{"id": 231, "input": "分電盤の各回路には使用場所を表示しています。", "target_language": "en", "input_type": "single"}
+{"id": 232, "input": "日付が文字列として保存されていたため、並べ替えが時系列になりませんでした。", "target_language": "en", "input_type": "single"}
+{"id": 233, "input": "床の仕上げ材を変えたところ、台車を動かす音が小さくなりました。", "target_language": "en", "input_type": "single"}
+{"id": 234, "input": "出庫口には荷主ごとの仕分け場所を設けています。", "target_language": "en", "input_type": "single"}
+{"id": 235, "input": "支払先を変更したため、以前の振替予約を取り消しました。", "target_language": "en", "input_type": "single"}
+{"id": 236, "input": "受付票には付き添いの人数も記入します。", "target_language": "en", "input_type": "single"}
+{"id": 237, "input": "患者は運動の回数を増やしましたが、一回あたりの時間は短くしました。", "target_language": "en", "input_type": "single"}
+{"id": 238, "input": "台車の車輪が床の継ぎ目に引っかかり、移動に時間がかかりました。", "target_language": "en", "input_type": "single"}
+{"id": 239, "input": "使用電力を比較する際は、一時的に別棟へ移した設備の分が抜けていないか確認してください。", "target_language": "en", "input_type": "single"}
+{"id": 240, "input": "同じ部屋の照明でも回路が異なる場合があるため、交換前に対象の電源を確認してください。", "target_language": "en", "input_type": "single"}
+{"id": 241, "input": "項目の説明を統一した後、評価者間の食い違いが減りました。", "target_language": "en", "input_type": "single"}
+{"id": 242, "input": "説明動画を追加したところ、組み立て方に関する問い合わせが減りました。", "target_language": "en", "input_type": "single"}
+{"id": 243, "input": "圧縮ファイルを展開する際は、同じ名前の資料を上書きしないよう保存場所を分けてください。", "target_language": "en", "input_type": "single"}
+{"id": 244, "input": "補聴器の電池を交換した後も聞き取りにくかったため、担当者は音量だけでなく装着位置も確認しました。", "target_language": "en", "input_type": "single"}
+{"id": 245, "input": "議事録の配布先を絞ったため、関係部署への連絡が漏れていました。", "target_language": "en", "input_type": "single"}
+{"id": 246, "input": "在庫の評価額を見直した結果、当期の利益が下がりました。", "target_language": "en", "input_type": "single"}
+{"id": 247, "input": "棚の奥に古い商品が残っていたため、取り出す順番を見直しました。", "target_language": "en", "input_type": "single"}
+{"id": 248, "input": "同時編集で競合した箇所は別の一覧に表示されます。", "target_language": "en", "input_type": "single"}
+{"id": 249, "input": "食事の記録には量だけでなく、食べるのにかかった時間も残しました。", "target_language": "en", "input_type": "single"}
+{"id": 250, "input": "金利が低くても保証料が高い場合は、借入期間全体の負担を比較してください。", "target_language": "ko", "input_type": "single"}
+{"id": 251, "input": "センサーの向きを変えたため、通路を通るだけでは自動ドアが開かなくなりました。", "target_language": "ko", "input_type": "single"}
+{"id": 252, "input": "取り置き期限を過ぎた商品は、担当者の確認後に店頭販売へ戻します。", "target_language": "ko", "input_type": "single"}
+{"id": 253, "input": "呼び出し音が聞こえにくい患者には、画面の表示も使って案内しています。", "target_language": "ko", "input_type": "single"}
+{"id": 254, "input": "画面を共有すると、発表者の通知まで参加者に見えてしまいます。", "target_language": "ko", "input_type": "single"}
+{"id": 255, "input": "組立後に配線が隠れるので、接続状態を写真に残しました。", "target_language": "ko", "input_type": "single"}
+{"id": 256, "input": "資金繰り表を週単位にしたところ、支払いが集中する日が見えてきました。", "target_language": "ko", "input_type": "single"}
+{"id": 257, "input": "操作履歴には取り消した処理も残ります。", "target_language": "ko", "input_type": "single"}
+{"id": 258, "input": "扉の閉まる力を弱めたところ、最後まで閉じないことが増えました。", "target_language": "ko", "input_type": "single"}
+{"id": 259, "input": "連絡先を修正した後、確認用の番号を新しい宛先に送り直しました。", "target_language": "ko", "input_type": "single"}
+{"id": 260, "input": "表示言語を変えても、入力済みの文章は翻訳されません。", "target_language": "ko", "input_type": "single"}
+{"id": 261, "input": "節水器具を付けた後、同じ作業にかかる洗浄時間が延びました。", "target_language": "ko", "input_type": "single"}
+{"id": 262, "input": "値を丸めたため、表の割合を足しても合計が百になりません。", "target_language": "ko", "input_type": "single"}
+{"id": 263, "input": "部署間の連絡が重複していたので、窓口を一つにまとめました。", "target_language": "ko", "input_type": "single"}
+{"id": 264, "input": "予算額は変更していませんが、支出の時期を来期にずらしました。", "target_language": "ko", "input_type": "single"}
+{"id": 265, "input": "閲覧数には社内の確認作業も含まれていたため、宣伝の効果を過大に見積もっていました。", "target_language": "ko", "input_type": "single"}
+{"id": 266, "input": "臭いが弱くなっても排出量が減ったとは限らないので、測定記録と合わせて確認してください。", "target_language": "ko", "input_type": "single"}
+{"id": 267, "input": "棚卸し中は商品を動かさないため、補充作業を別の時間に移しました。", "target_language": "ko", "input_type": "single"}
+{"id": 268, "input": "来客用の入館証は受付で返却します。", "target_language": "ko", "input_type": "single"}
+{"id": 269, "input": "追加の担当者を入れる前に、作業の遅れが人手不足によるものか確認してください。", "target_language": "ko", "input_type": "single"}
+{"id": 270, "input": "排水の採取場所は図面上で番号を付けています。", "target_language": "ko", "input_type": "single"}
+{"id": 271, "input": "緩衝材の補充場所は梱包台の下です。", "target_language": "ko", "input_type": "single"}
+{"id": 272, "input": "停止ボタンは作動しましたが、再起動の手順が現場に共有されていませんでした。", "target_language": "ko", "input_type": "single"}
+{"id": 273, "input": "同じ名称の商品でも内容量が違う場合があるので、価格を比べる際は単位量もそろえてください。", "target_language": "ko", "input_type": "single"}
+{"id": 274, "input": "非接触の蛇口は作動しますが、石けんの自動供給は電池切れで止まっています。", "target_language": "ko", "input_type": "single"}
+{"id": 275, "input": "数量に差が出た場合は、出荷済みの分を二度数えていないか確認してから在庫を修正してください。", "target_language": "ko", "input_type": "single"}
+{"id": 276, "input": "伝票の番号が重複していたため、金額ではなく取引日で照合しました。", "target_language": "ko", "input_type": "single"}
+{"id": 277, "input": "読み込みが遅くても処理が続いている場合は、同じボタンを繰り返し押さないでください。", "target_language": "ko", "input_type": "single"}
+{"id": 278, "input": "点検口の鍵は管理室で保管しています。", "target_language": "ko", "input_type": "single"}
+{"id": 279, "input": "包装を薄くした結果、材料は減りましたが輸送中の破損が増えました。", "target_language": "ko", "input_type": "single"}
+{"id": 280, "input": "室内に人がいなくても機器が発熱するので、夜間の空調停止を決める前に温度を確認してください。", "target_language": "ko", "input_type": "single"}
+{"id": 281, "input": "混合液の使用期限は容器の側面に記載します。", "target_language": "ko", "input_type": "single"}
+{"id": 282, "input": "部品を追加する前に、数が足りない理由が投入漏れなのか計数ミスなのかを調べてください。", "target_language": "ko", "input_type": "single"}
+{"id": 283, "input": "搬入口の高さが足りず、予定していた車両を小型車に変更しました。", "target_language": "ko", "input_type": "single"}
+{"id": 284, "input": "送り速度を変えたため、一個あたりの加工時間を測り直しました。", "target_language": "ko", "input_type": "single"}
+{"id": 285, "input": "再販売品には外装の状態を記載しています。", "target_language": "ko", "input_type": "single"}
+{"id": 286, "input": "会議室が足りないため、個別面談は予約制にしました。", "target_language": "ko", "input_type": "single"}
+{"id": 287, "input": "記録を匿名化しましたが、同じ人の経過を追える符号は残しています。", "target_language": "ko", "input_type": "single"}
+{"id": 288, "input": "差が有意でも実際の変化は小さい場合があるので、効果の大きさも併せて示してください。", "target_language": "ko", "input_type": "single"}
+{"id": 289, "input": "説明を聞く前に回答した人がいたため、その回答は別に確認しました。", "target_language": "ko", "input_type": "single"}
+{"id": 290, "input": "発電設備を止めていた日も含まれているため、月平均だけでは性能を判断できません。", "target_language": "ko", "input_type": "single"}
+{"id": 291, "input": "貸借対照表には決算日時点の資産が記載されます。", "target_language": "ko", "input_type": "single"}
+{"id": 292, "input": "荷札を上から貼り重ねたため、以前の識別番号が一部見えていました。", "target_language": "ko", "input_type": "single"}
+{"id": 293, "input": "歩行練習の前に靴の状態を確認します。", "target_language": "ko", "input_type": "single"}
+{"id": 294, "input": "図の縦軸は割合ではなく人数を示しています。", "target_language": "ko", "input_type": "single"}
+{"id": 295, "input": "問診票の回答が前回と違っていたため、看護師は体調の変化か記入ミスかを確かめました。", "target_language": "ko", "input_type": "single"}
+{"id": 296, "input": "担当者の交代は決まりましたが、引き継ぐ案件の範囲は未定です。", "target_language": "ko", "input_type": "single"}
+{"id": 297, "input": "診察室への移動に時間がかかるため、案内を少し早めました。", "target_language": "ko", "input_type": "single"}
+{"id": 298, "input": "電源を入れ直した後、周辺機器を一つずつ接続して不具合を調べました。", "target_language": "ko", "input_type": "single"}
+{"id": 299, "input": "患者は薬の名前を覚えていなかったので、持参した包装を確認しました。", "target_language": "ko", "input_type": "single"}
+{"id": 300, "input": "Si el ponente llega tarde, 실습 순서를 먼저 바꾸고 説明の時間は短くしないでください。", "target_language": "en", "input_type": "mixed"}
+{"id": 301, "input": "The attendance 記録は部署別に集めますが、集計は総務で行います。", "target_language": "ko", "input_type": "mixed"}
+{"id": 302, "input": "El servicio permite guardar favoritos, pero 別の端末で見るにはログインが必要です。", "target_language": "en", "input_type": "mixed"}
+{"id": 303, "input": "관리 대장에는 valve location과 la zona atendida, 鍵の保管先를 적습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 304, "input": "담당자는 移乗の手順을 보여 준 뒤 the caregiver에게 직접 따라 해 보도록 했습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 305, "input": "La campaña atrajo nuevos visitantes, pero most returned customers arrived through saved links.", "target_language": "en", "input_type": "mixed"}
+{"id": 306, "input": "새 access horario에서는 청소 직원의 야간 출입 시간도 따로 지정했습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 307, "input": "배송 순서는 정했지만 the last customer has not confirmed access to the service entrance.", "target_language": "en", "input_type": "mixed"}
+{"id": 308, "input": "El acta recoge las decisiones, pero 反対意見の理由が抜けています。", "target_language": "en", "input_type": "mixed"}
+{"id": 309, "input": "担当者は、la respuesta al timbreを確認してから、呼び出し方法を振動式に変えるか検討しました。", "target_language": "ko", "input_type": "mixed"}
+{"id": 310, "input": "Al revisar 長期借入金, separa la parte que vence este año antes de calcular los pagos futuros.", "target_language": "ko", "input_type": "mixed"}
+{"id": 311, "input": "측정표에는 周囲の騒音도 별도로 남깁니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 312, "input": "검토자가 원문을 다시 찾지 않도록 the summary에 判断に必要な情報를 넣어 주세요.", "target_language": "ko", "input_type": "mixed"}
+{"id": 313, "input": "El precinto tiene el número correcto, pero 車両の登録番号が書類と違います。", "target_language": "en", "input_type": "mixed"}
+{"id": 314, "input": "공개 전에 the image preview를 확인했더니 세로 사진의 윗부분이 잘려 있었습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 315, "input": "El clienteはthe bulk priceを見て、一箱ではなく一個の価格だと勘違いしました。", "target_language": "ko", "input_type": "mixed"}
+{"id": 316, "input": "작업자는 the feed guide를 조정한 뒤 材料の蛇行이 줄었는지 확인했습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 317, "input": "새 글은 바로 보이지만 the comment count updates once a minute.", "target_language": "en", "input_type": "mixed"}
+{"id": 318, "input": "装置を停止した後も、the cooling pump는 남은 열을 식히려고 계속 돌았습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 319, "input": "배포할 welcome pack에는 el horario와 館内案内가 들어 있습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 320, "input": "取付穴の位置は合っていますが、el tornillo suministrado es demasiado corto.", "target_language": "en", "input_type": "mixed"}
+{"id": 321, "input": "セット商品を案内する際は、la cantidad de cada artículoが単品購入時と同じか確認してください。", "target_language": "ko", "input_type": "mixed"}
+{"id": 322, "input": "この画面にはthe selected gift messageが表示されます。", "target_language": "en", "input_type": "mixed"}
+{"id": 323, "input": "Treat los fondos reservados as unavailable until the board releases them, even if they remain in the operating account.", "target_language": "ko", "input_type": "mixed"}
+{"id": 324, "input": "The technician opened la válvula principal, but 가장 먼 수도꼭지에는 아직 물이 나오지 않습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 325, "input": "The new señal이 車いすの目線에서는 가려져 설치 높이를 조정했습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 326, "input": "The microphone works in other applications, but el navegador no tiene permiso para usarlo.", "target_language": "en", "input_type": "mixed"}
+{"id": 327, "input": "The product is shown in the search results, but 구매 버튼은 재입고 전까지 비활성화됩니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 328, "input": "攪拌時間이 짧아 바닥에 가라앉은 분말이 남았습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 329, "input": "The waste 分類を細かくしたため、回収業者への説明も増えました。", "target_language": "ko", "input_type": "mixed"}
+{"id": 330, "input": "외부 강사는 확정되었지만 todavía no ha enviado los ejercicios para los participantes.", "target_language": "en", "input_type": "mixed"}
+{"id": 331, "input": "El portón abre con el mando, pero the vehicle detector does not keep it open long enough.", "target_language": "en", "input_type": "mixed"}
+{"id": 332, "input": "No agrupes the temperature-sensitive goods con el resto hasta confirmar cuánto durará la parada intermedia.", "target_language": "ko", "input_type": "mixed"}
+{"id": 333, "input": "The basin drains quickly, but 배수관의 물막이가 말라 냄새가 올라옵니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 334, "input": "El nombre del archivo contiene espacios, por eso 명령어에서는 전체 경로를 따옴표로 묶었습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 335, "input": "参加者にはa printed checklistを配ります。", "target_language": "en", "input_type": "mixed"}
+{"id": 336, "input": "정산표에는 currency와 el importe, 換算日을 적습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 337, "input": "この表にはthe observation periodを記載します。", "target_language": "en", "input_type": "mixed"}
+{"id": 338, "input": "音声の再生速度を下げても、la duración original del archivo no cambia.", "target_language": "en", "input_type": "mixed"}
+{"id": 339, "input": "견본을 보고 주문했지만 el cliente no había comprobado el tamaño del envase final.", "target_language": "en", "input_type": "mixed"}
+{"id": 340, "input": "보고서의 monthly consumo는 검침일이 바뀌어 집계 기간이 평소보다 깁니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 341, "input": "El sistemaはthe file signatureを使って、拡張子と内容が一致しているか確認します。", "target_language": "ko", "input_type": "mixed"}
+{"id": 342, "input": "集計の前に、담당자는 the unit labels를 확인해 초와 분이 섞인 기록을 찾아냈습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 343, "input": "この一覧にはunread messagesだけが表示されます。", "target_language": "en", "input_type": "mixed"}
+{"id": 344, "input": "The replacement etiqueta에 単位の表示가 빠져 담당자가 수정을 요청했습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 345, "input": "새 picking list는 주문 순서 대신 통로 순서로 정렬되어 있습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 346, "input": "出発前に、the loading diagram과 실제 상자 배치가 맞는지 확인했습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 347, "input": "Antes de reducir 換気の運転時間, comprueba si la calidad del aire se mantiene durante las horas de mayor ocupación.", "target_language": "ko", "input_type": "mixed"}
+{"id": 348, "input": "직원은 la altura de la cama를 낮춘 뒤 足元の照明도 켰습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 349, "input": "現金で支払った経費は、no aparecen en el extracto de la tarjeta.", "target_language": "en", "input_type": "mixed"}
+{"id": 350, "input": "상담원은 la versión del manual을 확인한 뒤 고객의 제품과 설명서가 같은 구성인지 살펴봤습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 351, "input": "同期の対象を減らす場合は、comprueba primero qué carpetas necesitas, 그런 다음 선택을 해제하세요.", "target_language": "en", "input_type": "mixed"}
+{"id": 352, "input": "この記録にはthe resting heart rateも含まれます。", "target_language": "en", "input_type": "mixed"}
+{"id": 353, "input": "The shared calendario에 표시된 開始時刻이 기기마다 달라 시간대 설정을 통일했습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 354, "input": "この区画はempty reusable cratesの置き場です。", "target_language": "en", "input_type": "mixed"}
+{"id": 355, "input": "담당자는 the comparison chart에서 무게 단위를 통일해 고객이 수치를 바로 비교할 수 있게 했습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 356, "input": "The revised programaでは、昼休みの前に質疑応答を行います。", "target_language": "en", "input_type": "mixed"}
+{"id": 357, "input": "El contadorはthe travel advanceを照合し、未精算の金額を担当者に通知しました。", "target_language": "ko", "input_type": "mixed"}
+{"id": 358, "input": "荷物を積み替える場合は、el orden de las entregasを確認してから奥に置く箱を決めてください。", "target_language": "ko", "input_type": "mixed"}
+{"id": 359, "input": "Si 文字の間隔 cambia al imprimir, revisa la configuración antes de sustituir la fuente.", "target_language": "ko", "input_type": "mixed"}
+{"id": 360, "input": "연구진은 the scoring guide를 배포한 뒤 같은 예시로 채점 연습을 했습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 361, "input": "장부의 closing saldo에는 아직 처리하지 않은 수표가 포함되지 않았습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 362, "input": "公開前に、담당자는 the compatibility table에서 판매가 끝난 부속품도 구분해 표시했습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 363, "input": "The categories are mutually exclusive, but 일부 응답자는 둘 이상을 선택했습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 364, "input": "전체 참가자 수는 같지만 no todos completaron las dos sesiones.", "target_language": "en", "input_type": "mixed"}
+{"id": 365, "input": "この表示はthe current charging rateを示します。", "target_language": "en", "input_type": "mixed"}
+{"id": 366, "input": "매장은 las preguntas frecuentes에 保管中の注意点을 추가했습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 367, "input": "El equipoはa separate contact listを使って、休日の連絡に対応しています。", "target_language": "ko", "input_type": "mixed"}
+{"id": 368, "input": "Aunque las lámparas estaban apagadas, 制御装置は動いていたため、전력 사용이 완전히 멈춘 것은 아닙니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 369, "input": "Desactiva automatic forwarding si los mensajes siguen llegando a una dirección que ya no pertenece al equipo.", "target_language": "ko", "input_type": "mixed"}
+{"id": 370, "input": "기록지에는 posture와 la hora, 測定した腕을 적습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 371, "input": "洗面台を交換する前に、la altura del desagüeが新しい器具に合うか確認してください。", "target_language": "ko", "input_type": "mixed"}
+{"id": 372, "input": "안내도에 段差のない経路를 따로 표시했습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 373, "input": "The lift can carry el peso total, but 팔레트의 폭이 입구보다 넓습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 374, "input": "給水量は同じでしたが、una mayor parte del agua salió como vapor.", "target_language": "en", "input_type": "mixed"}
+{"id": 375, "input": "Si comparas 授業前後の点数, utiliza las respuestas de las mismas personas en ambos momentos.", "target_language": "ko", "input_type": "mixed"}
+{"id": 376, "input": "보고서의 opening balance가 前期の繰越額과 맞지 않아 연결 내역을 다시 확인했습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 377, "input": "The operatorはel nivel del depósitoを見ながら、回収水と新しい水の割合を調整しました。", "target_language": "en", "input_type": "mixed"}
+{"id": 378, "input": "담당자는 la caída de presión이 한 층에서만 나타나는지 확인한 뒤 점검 범위를 정했습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 379, "input": "Si falta espacio para girar, 無理に車両を入れず、현장 담당자에게 다른 진입 방법을 문의하세요.", "target_language": "en", "input_type": "mixed"}
+{"id": 380, "input": "The nurse found dos envases iguales, but 안에 든 약의 용량은 달랐습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 381, "input": "The staff survey is anonymous, but 부서별 응답률은 따로 집계합니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 382, "input": "배송 지시서에 荷受け担当者の内線番号를 적었습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 383, "input": "Check el recorrido de la puerta before moving the cabinet closer, even if the walking route still seems wide enough.", "target_language": "ko", "input_type": "mixed"}
+{"id": 384, "input": "The charger is receiving power, but 배터리 연결 단자가 느슨해 충전은 진행되지 않습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 385, "input": "작업 표준에 保護フィルムの剥がし方를 추가했습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 386, "input": "The priority pedido를 出庫口の近く으로 옮겨 다른 화물을 건드리지 않고 꺼낼 수 있게 했습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 387, "input": "La pacienteはthe hearing test instructionsを読んでから、分からない箇所を質問しました。", "target_language": "ko", "input_type": "mixed"}
+{"id": 388, "input": "この台にはan adjustable stopが付いています。", "target_language": "en", "input_type": "mixed"}
+{"id": 389, "input": "The assembly 順序を変えると、最後のねじに工具が届かなくなります。", "target_language": "ko", "input_type": "mixed"}
+{"id": 390, "input": "固定費의 비중이 높아 매출이 줄어도 지출을 바로 줄이기 어렵습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 391, "input": "La consulta se hizo con un intérprete, pero 書類の署名は患者本人が行いました。", "target_language": "en", "input_type": "mixed"}
+{"id": 392, "input": "검색창의 default idioma가 바뀌어도 이전 검색어는 그대로 남습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 393, "input": "入力欄의 너비를 넓혔더니 긴 주소도 줄바꿈 없이 보입니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 394, "input": "화장실 환풍기는 돌아가지만 la rejilla de entrada de aire está tapada por un mueble.", "target_language": "en", "input_type": "mixed"}
+{"id": 395, "input": "수거 기록에는 material type과 el peso neto, 異物の有無를 적습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 396, "input": "備品を移動した後、담당자는 the sprinkler heads가 가려지지 않았는지 확인했습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 397, "input": "이번 performance review에는 숫자로 나타내기 어려운 지원 업무도 반영합니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 398, "input": "再利用率은 높아졌지만 한 번 쓰고 버리는 부속품의 수는 줄지 않았습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 399, "input": "Display las condiciones de la garantía before customers select an extended service plan so they can see what is already covered.", "target_language": "ko", "input_type": "mixed"}
+{"id": 400, "input": "배합표에는 mixing ratio와 el orden, 投入量이 적혀 있습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 401, "input": "재료는 충분하지만 la boquilla disponible no sirve para el grosor solicitado.", "target_language": "en", "input_type": "mixed"}
+{"id": 402, "input": "The new formulario에 日常生活の動作를 묻는 항목이 추가되어 면담이 조금 길어졌습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 403, "input": "Check el peso del recipiente vacío before recording the collection total, especially if a different container was used.", "target_language": "ko", "input_type": "mixed"}
+{"id": 404, "input": "分類基準을 고친 뒤 이미 분류한 자료도 다시 확인했습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 405, "input": "The revised instrucción에는 安全カバー를 닫은 뒤에만 시험 운전을 시작하도록 적혀 있습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 406, "input": "El informe registra el peso de reusable packaging por separado, pero 세척에 쓴 물은 포함하지 않습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 407, "input": "La caja se contó al cambiar de turno, pero 차액의 원인은 아직 설명되지 않았습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 408, "input": "시설팀은 the outdoor light sensor가 간판 불빛을 받지 않도록 위치를 옮겼습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 409, "input": "El encargadoはthe floor planを見ながら、清掃用具を置く場所を決めました。", "target_language": "en", "input_type": "mixed"}
+{"id": 410, "input": "The cartons are light enough to carry, but su tamaño dificulta sujetarlos en la escalera.", "target_language": "en", "input_type": "mixed"}
+{"id": 411, "input": "부서장은 el reparto de responsabilidades를 설명한 뒤 質問の時間을 따로 마련했습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 412, "input": "Aunque la descripción era correcta, 比較写真の縮尺が違ったため、구매자는 크기를 잘못 예상했습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 413, "input": "The response 選択肢に重なりがあったため、集計前に定義を確認しました。", "target_language": "ko", "input_type": "mixed"}
+{"id": 414, "input": "연결된 거래를 취소하기 전에 los asientos correspondientes를 찾아 다른 계정의 잔액에도 영향이 있는지 확인하세요.", "target_language": "ko", "input_type": "mixed"}
+{"id": 415, "input": "研修枠이 남아 있어 대기 중인 직원들에게 추가로 안내했습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 416, "input": "The bookmark still points to la página antigua, but 주소를 직접 입력하면 새 페이지가 열립니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 417, "input": "El préstamo tiene un tipo fijo, pero the insurance premium is reviewed every year.", "target_language": "en", "input_type": "mixed"}
+{"id": 418, "input": "이번 안건에는 定期面談の進め方도 포함됩니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 419, "input": "서식에서 거부된 全角の数字를 standard digits로 바꾸니 제출이 되었습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 420, "input": "Antes de cerrar 업무 분담표, confirma quién atenderá las consultas durante la ausencia del coordinador.", "target_language": "ko", "input_type": "mixed"}
+{"id": 421, "input": "作業終了時に、남은 접착제는 the original container로 되돌리지 않고 따로 모았습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 422, "input": "編集を始める前に、the document language를 실제 작성 언어에 맞춰 주세요.", "target_language": "ko", "input_type": "mixed"}
+{"id": 423, "input": "La reunión puede terminar antes, pero the interpreter is booked for the full hour.", "target_language": "en", "input_type": "mixed"}
+{"id": 424, "input": "El equipoはthe coding rulesを公開し、他の研究者が同じ分類を試せるようにしました。", "target_language": "ko", "input_type": "mixed"}
+{"id": 425, "input": "Keep los valores originales when converting units so that another researcher can trace any differences in the totals.", "target_language": "ko", "input_type": "mixed"}
+{"id": 426, "input": "새 mixing recipiente는 바닥이 둥글어 분말이 모서리에 남지 않습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 427, "input": "실험 기록에는 condition order와 la duración, 休憩の回数가 포함됩니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 428, "input": "El almacénではa rotating stock countを導入し、営業を止めずに棚ごとの数量を確認しています。", "target_language": "ko", "input_type": "mixed"}
+{"id": 429, "input": "The route 案内には一般道が表示されていますが、大型車は通れません。", "target_language": "ko", "input_type": "mixed"}
+{"id": 430, "input": "The exercise 回数は増えましたが、翌日の疲れも強くなりました。", "target_language": "ko", "input_type": "mixed"}
+{"id": 431, "input": "立ち上がる際にふらついたため、el paciente descansó unos minutos, 그런 다음 직원의 도움을 받아 이동했습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 432, "input": "The standard embalajeでは棚に収まらないため、小分けして保管します。", "target_language": "en", "input_type": "mixed"}
+{"id": 433, "input": "The final tabla에서 欠測値를 영으로 채우지 않고 별도 기호로 나타냈습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 434, "input": "積載方向을 바꾸자 먼저 내려야 할 상품을 문 가까이에 놓을 수 있었습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 435, "input": "직원은 la lista de recogida에서 回収不要の容器를 지웠습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 436, "input": "간호사는 환자가 몸을 돌리지 않고도 누를 수 있도록 the call button을 손이 닿는 쪽으로 옮겼습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 437, "input": "표 아래에 除外した記録の件数를 표시했습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 438, "input": "The review 投稿欄には文字数の上限がありますが、写真は別に添付できます。", "target_language": "ko", "input_type": "mixed"}
+{"id": 439, "input": "보호자에게 車いすの折り畳み方를 설명했습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 440, "input": "예치금은 늘었지만 some of it is restricted and cannot be used for daily expenses.", "target_language": "en", "input_type": "mixed"}
+{"id": 441, "input": "담당자는 la transcripción에서 聞き取れない箇所를 빈칸으로 두지 않고 따로 표시했습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 442, "input": "태양광 설비를 청소한 뒤 출력은 회복됐지만 una sección sigue dando menos energía que las demás.", "target_language": "en", "input_type": "mixed"}
+{"id": 443, "input": "연구진은 el intervalo entre sesiones를 확인한 뒤 서로 다른 간격으로 측정한 변화량을 비교할 수 있는지 검토했습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 444, "input": "The motion 検知範囲を広げると、隣の通路の人にも反応します。", "target_language": "ko", "input_type": "mixed"}
+{"id": 445, "input": "The listing includes productos de segunda mano, but 사용 기간은 판매자가 직접 입력합니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 446, "input": "경로표에는 stop order와 el acceso, 荷下ろし場所가 나옵니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 447, "input": "La persiana baja por completo, pero 途中で止める操作ができません。", "target_language": "en", "input_type": "mixed"}
+{"id": 448, "input": "상품 페이지에서 組み立てに必要な道具를 안내합니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 449, "input": "The original cuestionarioには説明文がありましたが、配布版では抜けていました。", "target_language": "en", "input_type": "mixed"}
+{"id": 450, "input": "작업자는 the locking pin이 끝까지 들어갔는지 손으로 눌러 확인했습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 451, "input": "The optional grabado는 作業開始後에 문구를 바꿀 수 없어 주문 확정 전에 다시 확인합니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 452, "input": "The daily registroには食事量だけでなく、運動した時間も残します。", "target_language": "en", "input_type": "mixed"}
+{"id": 453, "input": "La cantidad recogida aumentó, pero the proportion suitable for recycling fell.", "target_language": "en", "input_type": "mixed"}
+{"id": 454, "input": "The updated catálogoでは、部品を交換できる商品だけを絞り込めます。", "target_language": "en", "input_type": "mixed"}
+{"id": 455, "input": "내보내기 창에는 file size와 el formato, 保存先가 표시됩니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 456, "input": "Check la proporción de agua before adding more powder, since the mixture may only need extra stirring.", "target_language": "ko", "input_type": "mixed"}
+{"id": 457, "input": "초대장은 보냈지만 la lista de asistentes still needs to be checked against the room capacity.", "target_language": "en", "input_type": "mixed"}
+{"id": 458, "input": "지급 요청에는 承認済みの伝票를 첨부합니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 459, "input": "선반 배치를 바꾸기 전에 los artículos más solicitados를 찾아 이동 거리를 줄일 수 있는지 검토하세요.", "target_language": "ko", "input_type": "mixed"}
+{"id": 460, "input": "점검자는 the ceiling access panel을 열 수 없어 그 아래 가구를 먼저 옮겼습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 461, "input": "The chart summarizes las respuestas válidas, but 선택하지 않은 항목을 영점으로 처리하지는 않았습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 462, "input": "상태 표시줄에서 残りの処理件数를 볼 수 있습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 463, "input": "The technicianは、una etiqueta de advertenciaを、部品を逆向きに差し込まないように見える位置に貼りました。", "target_language": "en", "input_type": "mixed"}
+{"id": 464, "input": "비교표에는 capacity와 el material, 付属品の数가 나옵니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 465, "input": "새 필터를 적용하기 전에 los resultados excluidos를 살펴보고 필요한 기록까지 빠지는지 확인하세요.", "target_language": "ko", "input_type": "mixed"}
+{"id": 466, "input": "この資料にはthe repayment scheduleを添付します。", "target_language": "en", "input_type": "mixed"}
+{"id": 467, "input": "담당자는 la prueba de esfuerzo를 중단한 이유를 확인한 뒤 통증 때문인지 목표 시간에 도달해서인지 구분해 기록했습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 468, "input": "El resultado se puede reproducir, pero the calculation requires the original grouping labels.", "target_language": "en", "input_type": "mixed"}
+{"id": 469, "input": "El operario escaneó el paquete exterior, pero 안쪽 묶음의 수량은 별도로 확인하지 않았습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 470, "input": "The purchase 記録には車両本体だけでなく登録費用も含まれています。", "target_language": "ko", "input_type": "mixed"}
+{"id": 471, "input": "Si cambia la fecha de compra, 償却の開始月を確認してから、예상 비용을 다시 계산하세요.", "target_language": "en", "input_type": "mixed"}
+{"id": 472, "input": "The patient managed the steps with support, but 지팡이 없이 걷는 연습은 하지 않았습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 473, "input": "新しい体制に移る前に、las consultas habitualesをどの部署が引き受けるか決めてください。", "target_language": "ko", "input_type": "mixed"}
+{"id": 474, "input": "Antes de ajustar 체결 토크, comprueba si la arandela tiene el espesor indicado en el plano.", "target_language": "ko", "input_type": "mixed"}
+{"id": 475, "input": "銀行への提出前に、the loan application에 적힌 소득과 증빙 자료를 대조했습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 476, "input": "환자는 문장을 읽을 수 있었지만 no distinguía bien las cifras pequeñas de la etiqueta.", "target_language": "en", "input_type": "mixed"}
+{"id": 477, "input": "La mezcla conserva the required color, pero 굳는 속도가 이전보다 빨라졌습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 478, "input": "The data 保持期間は画面に表示されますが、部門ごとに設定が異なります。", "target_language": "ko", "input_type": "mixed"}
+{"id": 479, "input": "The nozzle is clear, but 공급 호스가 눌려 접착제가 일정하게 나오지 않습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 480, "input": "Aunque la cerradura funcionaba, 取っ手が緩んでいたため、직원은 문을 사용 중지로 표시했습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 481, "input": "Check las tareas pendientes with the departing employee before deciding whether a replacement needs the same qualifications.", "target_language": "ko", "input_type": "mixed"}
+{"id": 482, "input": "再入荷通知를 보냈지만 수신 거부한 고객에게는 전달되지 않았습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 483, "input": "El paciente entendió la explicación, pero asked for written instructions to take home.", "target_language": "en", "input_type": "mixed"}
+{"id": 484, "input": "この図はthe main shut-off valveを示しています。", "target_language": "en", "input_type": "mixed"}
+{"id": 485, "input": "Aunque el resultado parecía claro, 一つの条件だけで得られたため、연구진은 적용 범위를 제한해 설명했습니다.", "target_language": "en", "input_type": "mixed"}
+{"id": 486, "input": "이번 cash forecast에는 아직 확정되지 않은 투자금 유입을 넣지 않았습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 487, "input": "The annual balance에서 借入残高가 줄었지만 담보 설정은 아직 해제되지 않았습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 488, "input": "El motor gira, pero the belt slips whenever material enters the machine.", "target_language": "en", "input_type": "mixed"}
+{"id": 489, "input": "測定姿勢가 달라 이전 기록과 직접 비교하기 어려웠습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 490, "input": "The optional sesión은 勤務時間外에 열리므로 참석 여부를 미리 조사합니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 491, "input": "Si cambias 刃の取り付け角度, vuelve a fijar la pieza antes de comprobar el recorrido de la herramienta.", "target_language": "ko", "input_type": "mixed"}
+{"id": 492, "input": "手すり의 끝부분이 벽에서 떨어져 옷이 걸릴 수 있었습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 493, "input": "연구원은 la concentración medida가 낮아진 이유를 확인하려고 같은 시간대의 배수량도 살펴봤습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 494, "input": "작업자는 the air supply line을 잠근 뒤 圧力の低下를 지켜봤습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 495, "input": "選択肢は同じですが、la escala nueva permite indicar que la pregunta no corresponde al caso.", "target_language": "en", "input_type": "mixed"}
+{"id": 496, "input": "관리팀은 the circuit labels를 바꾸기 전에 実際の接続先를 하나씩 확인했습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 497, "input": "Aunque el recuento coincidía, 異なる型の部品が混ざっていたため、작업자는 조립을 멈췄습니다.", "target_language": "ko", "input_type": "mixed"}
+{"id": 498, "input": "The therapist checked el apoyo del pie before deciding whether the patient could repeat the exercise without assistance.", "target_language": "ko", "input_type": "mixed"}
+{"id": 499, "input": "The audit covered los pagos en efectivo, but 직원 개인 계좌는 조사 대상이 아니었습니다.", "target_language": "en", "input_type": "mixed"}
