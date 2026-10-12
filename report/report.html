@@ -115,6 +115,18 @@ Claude-style references of the training data more tightly (its dev2 score falls 
 score rises). We therefore treat dev2 only as a robustness check: the ordering on the main dev set, which matches the
 specification's examples in style, is 50M &gt; 5M on every subset, and the official validation set should be used to confirm it.</p>
 
+
+<h3>5.4 Additional controlled comparisons (50M budget, same data)</h3>
+<table><tr><th>50M variant</th><th>params</th><th>single→en</th><th>single→ko</th><th>mixed→en</th><th>mixed→ko</th><th>score</th><th>dev2</th></tr>
+<tr><td>uniform r=44 (submitted)</td><td>47,939,584</td><td>79.98</td><td>60.51</td><td>83.99</td><td>68.76</td><td><b>74.54</b></td><td>71.41</td></tr>
+<tr><td>MLP-heavy: attn r=20 / MLP r=60</td><td>49,315,840</td><td>79.12</td><td>61.40</td><td>83.61</td><td>68.71</td><td>74.39</td><td>72.37</td></tr>
+<tr><td>uniform r=44 + dropout 0.05, wd 0.01</td><td>47,939,584</td><td>79.34</td><td>60.64</td><td>83.77</td><td>68.31</td><td>74.23</td><td>71.38</td></tr>
+<tr><td>uniform r=44, 3rd epoch (lr 8e-5)</td><td>47,939,584</td><td>79.06</td><td>60.49</td><td>83.44</td><td>68.96</td><td>74.27</td><td>70.90</td></tr></table>
+<p>Re-allocating rank towards the MLP, adding regularisation, or training a third epoch all land within ±0.3 of the submitted
+configuration on the main dev set (the MLP-heavy variant is more robust on dev2 but falls 0.2 below the 5M system on mixed→en,
+which would break the "50M ≥ 5M on every metric" requirement). A third epoch for the 5M system likewise gave 73.43 (no change).
+Together with the pilot sweeps this suggests that, at this data scale, the remaining headroom is in the data (reference style
+and coverage) rather than in the adapter configuration.</p>
 <h2>6. Analysis</h2>
 <p><b>What the adapters fix.</b> The baseline's low Korean-target scores come mostly from catastrophic outputs rather than
 weak translation: it echoes or translates the instruction instead of the text, falls into repetition loops, or answers in the
