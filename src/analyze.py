@@ -22,7 +22,14 @@ def main():
     chrf = CHRF(word_order=2); n = lambda s: unicodedata.normalize("NFC", s).strip()
     buckets = defaultdict(list)
     rows = []
+    def g(r, *names):
+        for k in names:
+            if k in r and r[k] is not None: return r[k]
+        return None
     for r in refs:
+        r = dict(r); r["text"] = g(r, "text", "input"); r["reference"] = g(r, "reference", "answer")
+        r["type"] = "mixed" if str(g(r, "type", "input_type") or "").lower().startswith(("mix", "code")) else "single"
+        r["target"] = g(r, "target", "target_language", "target_lang"); r.setdefault("langs", [])
         p = preds[r["id"]]["prediction"]; tgt = norm_target(r["target"])
         s = chrf.sentence_score(n(p), [n(r["reference"])]).score
         c = chrf.sentence_score(n(r["text"]), [n(r["reference"])]).score
