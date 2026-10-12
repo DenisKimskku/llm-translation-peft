@@ -1,0 +1,27 @@
+You are creating TRAINING data for a code-switched machine translation system among English (en), Spanish (es), Korean (ko), and Japanese (ja).
+
+Scenario: {domain} — {situation}. Participants: {roles}.
+
+FIRST write 8 DIFFERENT sentences IN {source_name} ({source_code}) that a participant would realistically say or write in this scenario. Each item is ONE sentence of 10-18 words (or the equivalent length), written natively in {source_name} (not a translation), plain and concrete: mostly statements that report a situation with a contrast, condition, cause or time relation (but / although / even though / if / until / because / after / before / so that), e.g. "The refund was approved, but the money has not reached the account yet." At most 2 of the 8 may be requests or questions. Include concrete nouns (documents, equipment, amounts, deadlines, departments) but no real person names; avoid idioms, slang and puns.
+
+For each sentence produce a JSON object with keys:
+- "{source_code}": the sentence in {source_name}.
+- "en": a natural English translation that keeps every detail (if the source is English, repeat it).
+- "ko": a natural, concise Korean translation the way a professional translator writes for native readers, polite formal register (statements -습니다/-입니다, requests -세요/-주세요), no commas unless truly needed, keeping every detail (if the source is Korean, repeat it).
+- "es": a natural Spanish translation keeping every detail (if the source is Spanish, repeat it).
+- "ja": a natural Japanese translation, polite register (です/ます), keeping every detail (if the source is Japanese, repeat it).
+- "mixed1": a code-switched version of the SAME sentence built according to SPEC1 for that sentence (below).
+- "mixed2": a second code-switched version built according to SPEC2 for that sentence, with a different switching pattern than mixed1.
+- "mixed1_langs", "mixed2_langs": lists of the language codes actually used.
+
+Each SPEC has the form "matrix=X; embed=Y[,Z[,W]]; pattern=P". The MATRIX language supplies the grammar, word order, verb endings and ALL function words and particles; each EMBEDDED language contributes spans copied verbatim from the corresponding translation above. Patterns:
+- "noun": replace 1-3 nouns or noun phrases of the matrix sentence with the embedded-language equivalents; attach the matrix language's particles directly to the foreign words with no space (e.g. "the blocked drain을 청소한 뒤", "La muestra는 도착했지만", "部品の到着을 기다리고 있습니다", "meetingが終わったら"); in an English or Spanish matrix keep the matrix determiner ("the 회의", "el reporte"). Never switch pronouns, verb endings, or function words; never split a proper name.
+- "clause": switch languages exactly at a clause boundary (after a comma, subordinator or conjunction) so one clause is entirely in the matrix language and the other clause(s) entirely in an embedded language (e.g. "El ascensor ya funciona, pero 운행 재개 안내는 아직 붙이지 않았습니다.").
+- "phrase": mix a longer phrase (an object phrase, time expression, or verb phrase) from an embedded language inside the matrix clause (e.g. "The update는 接続の問題를 해결했지만, los archivos antiguos는 여전히 열리지 않습니다.").
+- "verb": a Korean/Japanese matrix keeps an English or Spanish verb/adjective stem with 하다/する-type grammar ("주문을 cancel하고", "confirmしてください"), plus at most one embedded noun.
+With two or three embedded languages, use ALL of them (e.g. one clause from one language and noun phrases from the others). The mixed sentence must keep EXACTLY the same meaning and all details as the source sentence — do not add, omit, or change information, and do not keep both the matrix word and its embedded equivalent.
+
+SPEC1 (sentence 1..8): {specs1}
+SPEC2 (sentence 1..8): {specs2}
+
+Output ONLY a JSON array of 8 objects, nothing else.

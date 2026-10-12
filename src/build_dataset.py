@@ -80,7 +80,8 @@ def main():
     block = set()
     for p in args.dedup_against:
         for r in read_jsonl(p):
-            block.add(clean(r.get("reference", "")).lower()); block.add(clean(r.get("text", "")).lower())
+            for k in ("reference", "answer", "text", "input"):
+                if r.get(k): block.add(clean(r[k]).lower())
     clean_t = [t for t in clean_t if t["en"].lower() not in block and t["ko"].lower() not in block]
     print(f"{len(tuples)} tuples -> {len(clean_t)} clean unique ({bad} malformed)")
     mixed_rows, single_rows = [], []
