@@ -1,8 +1,8 @@
 """Convert infer.py predictions into the instructor's submission format (validation format + "answer").
 
 python scripts/make_submission.py --test data/dev/official_test.jsonl --pred5 outputs/test/pred_5m.jsonl --pred50 outputs/test/pred_50m.jsonl --sid 2026711223 --out submission/
-Writes <sid>-project1-predictions-5m.jsonl, <sid>-project1-predictions-50m.jsonl (each: test row + "answer"), and
-<sid>-project1-predictions.jsonl (test row + "answer" (=50M system) + "answer_5m" + "answer_50m").
+Writes <sid>-project1-predictions-5M.jsonl and <sid>-project1-predictions-50M.jsonl (each: test row + "answer"),
+one file per budget as the instructor requested.
 """
 import argparse, json, os, unicodedata, sys
 sys.path.insert(0, 'src'); from common import postprocess
@@ -25,8 +25,7 @@ def write(name, fn):
             row = {"id": t["id"], "input": t["input"], "target_language": t["target_language"], "input_type": t["input_type"]}
             row.update(fn(t)); f.write(json.dumps(row, ensure_ascii=False) + "\n")
     print("wrote", path)
-write(f"{a.sid}-project1-predictions-5m.jsonl", lambda t: {"answer": clean(m5[t["id"]], t["target_language"])})
-write(f"{a.sid}-project1-predictions-50m.jsonl", lambda t: {"answer": clean(m50[t["id"]], t["target_language"])})
-write(f"{a.sid}-project1-predictions.jsonl", lambda t: {"answer": clean(m50[t["id"]], t["target_language"]), "answer_5m": clean(m5[t["id"]], t["target_language"]), "answer_50m": clean(m50[t["id"]], t["target_language"])})
+write(f"{a.sid}-project1-predictions-5M.jsonl", lambda t: {"answer": clean(m5[t["id"]], t["target_language"])})
+write(f"{a.sid}-project1-predictions-50M.jsonl", lambda t: {"answer": clean(m50[t["id"]], t["target_language"])})
 empty = sum(1 for t in test if not m5[t["id"]].strip() or not m50[t["id"]].strip())
 print("rows:", len(test), "| empty predictions replaced:", empty, "| ids unique:", len({t["id"] for t in test}) == len(test))

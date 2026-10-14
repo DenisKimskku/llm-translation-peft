@@ -70,7 +70,7 @@ export HF_HOME=~/hf   # Qwen/Qwen3-1.7B is downloaded on first use
 ```bash
 ~/venvs/csmt/bin/python src/infer.py --input test.jsonl --out predictions.jsonl --adapter outputs/final3_50m_mlp/adapter
 ~/venvs/csmt/bin/python src/eval_chrf.py --pred predictions.jsonl --ref validation.jsonl
-# submission files (answer = 50M output; answer_5m / answer_50m also included, plus one file per system)
+# submission files: one per budget, <SID>-project1-predictions-5M.jsonl and -50M.jsonl (test row + "answer")
 ~/venvs/csmt/bin/python scripts/make_submission.py --test test.jsonl --pred5 pred_5m.jsonl --pred50 pred_50m.jsonl --sid <SID> --out submission
 ```
 Input rows need `text` (or `input`) and `target` (or `target_language`: `en` | `ko`); `id` is preserved. Decoding is greedy with

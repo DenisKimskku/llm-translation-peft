@@ -1,6 +1,6 @@
 #!/bin/bash
 # Build <SID>-project1-submit.zip = { <SID>-project1-src.zip (code only: src/scripts/configs/prompts/README, own dev set, adapter configs
-# without weights; NO training data), <SID>-project1-report.pdf, <SID>-project1-predictions.jsonl (+ per-system files) }
+# without weights; NO training data), <SID>-project1-report.pdf, <SID>-project1-predictions.jsonl }
 set -euo pipefail
 SID=${1:-2026711223}
 cd /home/minseok/llm-advanced-class/project1
@@ -12,7 +12,7 @@ cp outputs/official/val_*.jsonl $W/src_pkg/outputs/ 2>/dev/null || true   # vali
 find $W/src_pkg -name "__pycache__" -type d -exec rm -rf {} + 2>/dev/null || true
 (cd $W/src_pkg && zip -qr ../${SID}-project1-src.zip .)
 cp report/report.pdf $W/${SID}-project1-report.pdf
-cp submission/${SID}-project1-predictions.jsonl submission/${SID}-project1-predictions-5m.jsonl submission/${SID}-project1-predictions-50m.jsonl $W/
-(cd $W && zip -q ${SID}-project1-submit.zip ${SID}-project1-src.zip ${SID}-project1-report.pdf ${SID}-project1-predictions.jsonl ${SID}-project1-predictions-5m.jsonl ${SID}-project1-predictions-50m.jsonl)
+cp submission/${SID}-project1-predictions-5M.jsonl submission/${SID}-project1-predictions-50M.jsonl $W/
+(cd $W && zip -q ${SID}-project1-submit.zip ${SID}-project1-src.zip ${SID}-project1-report.pdf ${SID}-project1-predictions-5M.jsonl ${SID}-project1-predictions-50M.jsonl)
 mkdir -p submission && cp $W/${SID}-project1-submit.zip submission/
 ls -la submission/${SID}-project1-submit.zip && unzip -l submission/${SID}-project1-submit.zip && echo "--- src zip contents (top level) ---" && unzip -l $W/${SID}-project1-src.zip | awk '{print $4}' | cut -d/ -f1-2 | sort | uniq -c | sort -rn | head -12
