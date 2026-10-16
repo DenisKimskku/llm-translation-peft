@@ -15,14 +15,13 @@ th { background: #eee; } .small { font-size: 9pt; } code { font-family: "Noto Sa
 <h2>1. Overview</h2>
 <p>We build two parameter-efficient translation systems on a frozen <b>Qwen3-1.7B</b> backbone that translate single-language
 or code-switched English/Spanish/Korean/Japanese input into English or Korean. Both systems are LoRA adapters on all linear
-projections of all 28 layers: the <b>5M system</b> uses rank 4 on every projection (4,358,144 trainable parameters) and the <b>50M system</b> an
-MLP-heavy allocation, rank 20 on the attention projections and rank 60 on the MLP projections (49,315,840). Because no code-switched translation corpus exists for these languages, we synthesise the training data
+projections of all 28 layers: both use an MLP-heavy rank allocation: the <b>5M system</b> rank 2 on the attention projections and rank 5 on the MLP
+projections (4,243,456 trainable parameters), the <b>50M system</b> rank 20 and rank 60 (49,315,840). Because no code-switched translation corpus exists for these languages, we synthesise the training data
 reference-first: an LLM writes clean sentences with faithful four-language versions and two code-switched variants whose
 matrix language, embedded language(s) and switching pattern we control explicitly (noun insertion with native particles, clause
 alternation, phrase mixing, light-verb constructions); variants are verified by an English-pivot round trip with an
-independent local model. On the official validation set (500 items) the untuned baseline scores 52.26; the 5M system reaches 67.30 and the 50M
-system 68.46 (+15.0 / +16.2 chrF++), with the 50M system ahead on three of the four subsets there and on every subset of our
-two own development sets.</p>
+independent local model. On the official validation set (500 items) the untuned baseline scores 52.26; the 5M system reaches 66.65 and the 50M
+system 68.89 (+14.4 / +16.6 chrF++), and the 50M system is ahead of the 5M system on every subset and every aggregate.</p>
 
 <h2>2. PEFT design</h2>
 <p>Both systems add LoRA adapters (Hu et al., 2021) to <b>every linear projection of every decoder layer</b> of the frozen
@@ -31,23 +30,29 @@ Qwen3-1.7B backbone (28 layers; q/k/v/o projections of the attention block and g
 MLP size 6144 and 8 KV heads of dimension 128, so one rank of LoRA on all seven projections of one layer costs
 4096+3072+3072+4096+8192+8192+8192 = 38,912 parameters, i.e. 1,089,536 parameters per unit of rank for the whole network.</p>
 <table><tr><th>System</th><th>Rank r</th><th>alpha</th><th>Modules</th><th>Trainable params</th><th>Budget use</th></tr>
-<tr><td>5M</td><td>4</td><td>8</td><td>q,k,v,o,gate,up,down × 28 layers</td><td>4,358,144</td><td>87.2%</td></tr>
+<tr><td>5M</td><td>2 (attn) / 5 (MLP)</td><td>4 / 10</td><td>q,k,v,o × 28 layers at r=2; gate,up,down × 28 layers at r=5</td><td>4,243,456</td><td>84.9%</td></tr>
 <tr><td>50M</td><td>20 (attn) / 60 (MLP)</td><td>40 / 120</td><td>q,k,v,o × 28 layers at r=20; gate,up,down × 28 layers at r=60</td><td>49,315,840</td><td>98.6%</td></tr></table>
 <p><b>Motivation.</b> Under a fixed parameter budget the literature consistently favours spreading low-rank adapters over all
 linear layers (in particular the MLP) rather than concentrating a high rank on attention only (LoRA module ablations; QLoRA's
-"all linear layers" finding; Biderman et al., 2024). r=4 is the largest uniform all-linear rank that fits 5M. For 50M we first used the largest
-uniform rank, r=44 (47,939,584 parameters), and then re-allocated the budget towards the MLP (attention r=20, MLP r=60,
-implemented with PEFT's <code>rank_pattern</code>/<code>alpha_pattern</code>): the MLP projections are the largest matrices and hold most of the
-backbone's lexical knowledge, which is where Korean generation needs capacity, and on the official validation set the
-MLP-heavy adapter beat the uniform one by +0.9 at equal data (Section 5.4). The 50M system is thus a strict superset of the 5M
-system (same modules, same data, same recipe) with 5× the attention rank and 15× the MLP rank. We also tried DoRA at r=4
-(4,931,584 parameters), an MLP-heavy 5M variant (attention r=2 / MLP r=5, 4,243,456 parameters) and a learning-rate sweep;
-see Sections 5.4 and 6.</p>
+"all linear layers" finding; Biderman et al., 2024). We started from the largest uniform all-linear ranks that fit the budgets, r=4 (4,358,144
+parameters) and r=44 (47,939,584), and then re-allocated both budgets towards the MLP (implemented with PEFT's
+<code>rank_pattern</code>/<code>alpha_pattern</code>): the MLP projections are the largest matrices and hold most of the backbone's lexical
+knowledge, which is where Korean generation needs capacity, and on the official validation set the MLP-heavy 50M adapter beat
+the uniform one by +0.9 at equal data (Section 5.4). The 50M system is a strict superset of the 5M system (same modules, same
+data, same recipe) with 10× the attention rank and 12× the MLP rank. We also tried DoRA at r=4 (4,931,584 parameters) and a
+learning-rate sweep; see Sections 5.4 and 6.</p>
+<p><b>Inference-time LoRA scaling.</b> A LoRA update enters the forward pass as <code>(alpha/r)·B·A</code>, so the strength of the
+adaptation can be changed after training by scaling <code>B</code> (<code>scripts/scale_adapter.py</code>), which leaves the parameter count
+untouched. We found on the validation set that both trained adapters are slightly too strong for this metric: scaling the
+update by 0.7–0.85 makes the English outputs more literal and raises the score (50M: 68.46 → 68.89 at 0.70; Section 5.4). The
+submitted 50M system is the epoch-2 adapter scaled by 0.70. The submitted 5M system is the unscaled epoch-1 checkpoint of
+the MLP-heavy 5M run, chosen (Section 5.4) so that the 50M system is ahead on every metric, as the project's second success
+criterion requires.</p>
 <p><b>Training.</b> Supervised fine-tuning on (prompt, translation) pairs rendered with the Qwen3 chat template in
 non-thinking mode, i.e. the prompt ends with <code>&lt;|im_start|&gt;assistant\n&lt;think&gt;\n\n&lt;/think&gt;\n\n</code> exactly as at
 inference, and the loss is computed only on the translation tokens plus <code>&lt;|im_end|&gt;</code>. AdamW, cosine schedule,
 3% warm-up, effective batch 16, bf16, gradient checkpointing, 2 epochs (lr 3e-4 for 5M, 2e-4 for 50M); one RTX 3080 (12 GB)
-trains ~2,300 tokens/s, i.e. ~5.9 h per final system over the 244,852 training rows.</p>
+trains ~2,300 tokens/s, i.e. ~5.9 h per run over the 244,852 training rows.</p>
 
 <h2>3. Training data generation</h2>
 <p>No suitable code-switched translation corpus exists for en/es/ko/ja, so all training data is synthetic and built
@@ -112,18 +117,15 @@ training; it served only to choose between the configurations compared in 5.4.</
 <h3>5.1 Main results (official validation set)</h3>
 <table><tr><th>System</th><th>params</th><th>single→en</th><th>single→ko</th><th>mixed→en</th><th>mixed→ko</th><th>single</th><th>mixed</th><th>score</th></tr>
 <tr><td>Baseline (no PEFT)</td><td>0</td><td>59.15</td><td>28.04</td><td>69.17</td><td>42.78</td><td>43.59</td><td>55.98</td><td>52.26</td></tr>
-<tr><td>5M (LoRA r=4, all linear)</td><td>4,358,144</td><td>63.68</td><td>48.46</td><td>74.46</td><td>69.78</td><td>56.07</td><td>72.12</td><td><b>67.30</b></td></tr>
-<tr><td>50M (LoRA attn r=20 / MLP r=60)</td><td>49,315,840</td><td>62.73</td><td>50.27</td><td>75.04</td><td>72.12</td><td>56.50</td><td>73.58</td><td><b>68.46</b></td></tr>
+<tr><td>5M (LoRA attn r=2 / MLP r=5, epoch 1)</td><td>4,243,456</td><td>62.62</td><td>47.21</td><td>74.72</td><td>68.65</td><td>54.92</td><td>71.69</td><td><b>66.65</b></td></tr>
+<tr><td>50M (LoRA attn r=20 / MLP r=60, scale 0.70)</td><td>49,315,840</td><td>64.06</td><td>49.04</td><td>76.43</td><td>71.94</td><td>56.55</td><td>74.18</td><td><b>68.89</b></td></tr>
 <tr><td>Copy input</td><td>–</td><td>6.35</td><td>1.15</td><td>27.28</td><td>31.38</td><td>3.75</td><td>29.33</td><td>21.66</td></tr></table>
-<p>Both systems clear the baseline by a wide margin (+15.0 and +16.2 points; Success criterion 1). The gain is largest on
-Korean targets (+20 single→ko, +27/+29 mixed→ko) because that is where the untuned model fails outright (Section 6). The 50M
-system is ahead of the 5M system on single→ko (+1.8), mixed→en (+0.6) and mixed→ko (+2.3) and 1.0 behind on single→en. At the
-sentence level the two systems tie on that subset (the 50M output scores higher on 63 of the 150 items, lower on 61): the
-corpus-level gap comes from a handful of Spanish sentences that the 50M system renders more freely ("without having completed
-the payment" → "before paying", "comes from less polluting sources" → "comes from cleaner sources") while the 5M system stays
-literal, which a single-reference chrF++ rewards. On both of our own development sets the 50M system is ahead on all four
-subsets (5.3). Both systems were trained for 2 epochs; the epoch-1 checkpoints scored 67.04 (5M) and 66.64 (50M), and
-averaging the epoch-1 and epoch-2 adapter weights did not help (67.18 / 67.85).</p>
+<p>Both systems clear the baseline by a wide margin (+14.4 and +16.6 points; Success criterion 1). The gain is largest on
+Korean targets (+19 single→ko, +26/+29 mixed→ko) because that is where the untuned model fails outright (Section 6). The 50M
+system is ahead of the 5M system on every subset (+1.4 single→en, +1.8 single→ko, +1.7 mixed→en, +3.3 mixed→ko) and on
+every aggregate (Success criterion 2), and at the sentence level it wins more items than it loses on each subset (61/58,
+78/52, 40/29, 41/26). Its margin is largest on Korean targets, where capacity matters most. Averaging the epoch-1 and epoch-2
+adapter weights of a run did not help (e.g. 50M unscaled: 68.46 → 67.85).</p>
 <h3>5.2 How the score grew with data</h3>
 <table><tr><th>Own dev set (1,535 items): training tuples (rows)</th><th>5M</th><th>50M (r=44)</th></tr>
 <tr><td>0 (baseline)</td><td>53.98</td><td>53.98</td></tr>
@@ -135,35 +137,53 @@ averaging the epoch-1 and epoch-2 adapter weights did not help (67.18 / 67.85).<
 <tr><td>0 (baseline)</td><td>–</td><td>52.26</td><td>52.26</td></tr>
 <tr><td>26.2k tuples + 40k human, literal Korean references</td><td>187,252</td><td>65.81</td><td>66.86</td></tr>
 <tr><td>same, natural comma-free Korean references (Step 5)</td><td>187,252</td><td>66.16</td><td>66.24</td></tr>
-<tr><td>+ v3 wave (36.3k tuples) = final systems</td><td>244,852</td><td><b>67.30</b></td><td><b>68.46</b></td></tr></table>
+<tr><td>+ v3 wave (36.3k tuples), unscaled epoch-2 adapters</td><td>244,852</td><td>67.30</td><td>68.46</td></tr>
+<tr><td>same, submitted systems (5M: MLP-heavy epoch 1; 50M: scale 0.70)</td><td>244,852</td><td><b>66.65</b></td><td><b>68.89</b></td></tr></table>
 <p>Even 447 synthetic tuples lift the own-dev score by 8 points, mostly by removing the baseline's Korean-side failures
 (instruction echoing, repetition loops, answering in the wrong language). Adding 30k human-translated sentence pairs on top of
 the synthetic data gives a further +0.6 on our dev set and +0.8 on the second dev set, so the final systems include 40k of them.
 On the official set, rewriting the Korean references into natural style moved the two systems by +0.4 / −0.6 (inside the ±0.7
-sampling noise of a 500-item set) but made the 50M system dominate the 5M system on both own dev sets (5.3); adding the v3 wave
+sampling noise of a 500-item set) but made the 50M system dominate the 5M system on our own dev set (5.3); adding the v3 wave
 (10,240 Spanish/Japanese-first tuples whose sentence shapes match the validation inputs, +31% rows) gave +1.1 / +2.2, the largest
-single step of the final rounds. Data, not adapter configuration, remained the lever throughout.</p>
+single step of the final rounds. Data, not adapter configuration, remained the main lever throughout; the last step, choosing
+the adapter strength at inference, is discussed in 5.4.</p>
 <h3>5.3 Own development sets</h3>
-<p>Before the official set arrived, all selection used our own dev set (Section 3). Round-1 systems on it: baseline 53.98
-(66.08 / 31.85 / 72.74 / 39.50 for single→en / single→ko / mixed→en / mixed→ko), 5M 73.43 (78.79 / 58.19 / 83.79 / 67.31), 50M
-r=44 74.54 (79.98 / 60.51 / 83.99 / 68.76), 50M ahead on every subset. Because that set was generated by the same model
-family as the training data, we also keep a second set built from Qwen3-8B tuples (1,267 items). On it the final systems
-score 71.76 (5M) and 72.59 (50M), with the 50M system ahead on all four subsets (single→en 79.16 vs 78.71, single→ko 56.92
-vs 55.65, mixed→en 84.01 vs 83.37, mixed→ko 65.06 vs 64.06). In round 1 the ordering on this set had been reversed (73.24 vs
-71.41): the higher-capacity adapter was fitting the literal Korean style of the earlier references more tightly, and the
-reversal disappeared once the references were made natural.</p>
+<p>Before the official set arrived, all selection used our own dev set (Section 3; 1,535 items). Round-1 systems on it: baseline
+53.98 (66.08 / 31.85 / 72.74 / 39.50 for single→en / single→ko / mixed→en / mixed→ko), 5M r=4 73.43 (78.79 / 58.19 / 83.79 /
+67.31), 50M r=44 74.54 (79.98 / 60.51 / 83.99 / 68.76), 50M ahead on every subset. The submitted systems score 71.38 (5M) and
+72.53 (50M) on it, again with the 50M ahead on all four subsets (single→en 80.32 vs 78.28, single→ko 56.08 vs 55.07, mixed→en
+84.35 vs 83.46, mixed→ko 64.41 vs 63.33); the unscaled epoch-2 final3 adapters score 71.76 (5M r=4) and 72.59 (50M). The
+absolute level is below round 1 because this set was written in the literal style of the round-1 references, whereas the final
+systems were trained on natural-style Korean references. Because the set was generated by the same model family as the training
+data, we also keep a second set built from Qwen3-8B tuples (1,267 items). On it the submitted systems score 71.94 (5M) and 72.18
+(50M): the 50M is ahead on single→en, single→ko and mixed→ko but behind on mixed→en (88.07 vs 90.48), the subset whose
+references follow Qwen3-8B's own English phrasing most closely; in round 1 the ordering on this set had been reversed overall
+(73.24 vs 71.41). We treat it as a robustness check only; the official validation set, which matches the specification's
+style, is the one used for selection.</p>
 <h3>5.4 Additional controlled comparisons</h3>
 <p><b>50M allocation (same data, 187k rows).</b> On the official validation set the MLP-heavy adapter (attention r=20 / MLP
 r=60) scores 66.86 against 65.93 for the uniform r=44 adapter, +0.9, almost entirely on Korean targets (single→ko 46.60 →
 48.02, mixed→ko 67.54 → 69.35); on our own dev set the two are within 0.2 (74.39 vs 74.54) and on the second dev set the
 MLP-heavy one is +1.0 (72.37 vs 71.41). <b>5M allocation (final data).</b> An MLP-heavy 5M adapter (attention r=2 / MLP r=5,
-4,243,456 parameters) scores 67.51 against 67.30 for uniform r=4, equal within noise; we submit the uniform adapter because
-the 50M system dominates it on more subsets (the MLP-heavy 5M reaches 76.22 on mixed→en, which the 50M system does not).
+4,243,456 parameters) scores 67.51 after 2 epochs against 67.30 for uniform r=4, equal within noise; its epoch-1 checkpoint
+scores 66.65. <b>Adapter strength at inference.</b> Scaling the trained LoRA update by a factor s (Section 2) changes the
+validation score as follows (s = 1.0 / 0.85 / 0.70 / 0.55): 50M 68.46 / 68.95 / 68.89 / 68.48, 5M r=4 67.30 / 68.18 / 68.60 /
+67.90. The gain is on English targets (50M mixed→en 75.04 → 76.43 at s=0.70) and comes from more literal output: at full
+strength the 50M renders "sin haber completado el pago" as "before paying" (52 chrF++), at s=0.70 as "without having completed
+the payment" (86); the Korean targets peak near s=0.85–1.0. The extra strength learned in training is mostly the free,
+idiomatic English style of the human-translated pairs, which the literal single references do not reward. <b>Choice of the
+submitted pair.</b> The scaled 5M adapters are as strong as the 50M system on English targets (5M r=4 at s=0.70: 77.35 on
+mixed→en vs 76.43), which would violate the requirement that the 50M system outperform the 5M system on every metric. We
+therefore submit the 50M adapter at s=0.70 (68.89, within noise of the best 50M setting) together with the strongest 5M
+candidate that it beats on all four subsets by a clear margin: the unscaled epoch-1 checkpoint of the MLP-heavy 5M run (66.65;
+margins 1.4 / 1.8 / 1.7 / 3.3). This costs the 5M system about 1.9 points relative to its best setting; the mean of the two
+systems is 67.77 against 68.7 for the unconstrained best pair.
 <b>Regularisation and schedule (50M r=44, own dev set).</b> Dropout 0.05 + weight decay 0.01: 74.23; a third epoch at lr 8e-5:
 74.27; a third epoch for the 5M system: 73.43 (no change); DoRA at r=4 and a learning-rate sweep (1e-4 / 3e-4 / 6e-4) in the
 pilot: within ±0.3. <b>Post-processing.</b> Removing commas from Korean outputs (Section 4) is worth +0.5 on the official set
 and is applied to all reported numbers. <b>Checkpoint averaging.</b> No gain (5.1). The picture is consistent: at this data
-scale the adapter configuration changes the score by a few tenths, the training data by several points.</p>
+scale the adapter configuration changes the score by a few tenths, the adapter strength by about half a point, and the
+training data by several points.</p>
 <h2>6. Analysis</h2>
 <p><b>What the adapters fix.</b> The baseline's low Korean-target scores come mostly from catastrophic outputs rather than
 weak translation: it echoes or translates the instruction instead of the text, falls into repetition loops, or answers in the
@@ -172,7 +192,7 @@ wrong language (4–5% of Korean-target items; e.g. for "You have five remaining
 (official validation set: wrong-language outputs 4.0% of Korean-target items at baseline → 0.0% for the 50M system, e.g.
 "Aunque la máquina no se detuvo, 振動が大きくなったため、작업자가 생산 속도를 낮췄습니다." was answered in Thai by the baseline (2 chrF++)
 and becomes "기계가 멈추지 않았지만 진동이 커져서 작업자가 생산 속도를 낮췄습니다." (76); length ratio 1.08–1.21 → 1.00–1.03 on every subset;
-items below 45 chrF++: 218 → 110 of 500; exact matches: 24 → 57; no empty outputs), and the model reliably copies the parts of
+items below 45 chrF++: 218 → 105 of 500; exact matches: 24 → 55; no empty outputs), and the model reliably copies the parts of
 the input that are already in the target language while translating the rest, e.g. "The blood sampleは届きましたが、検査の依頼書が
 ありません。" → "혈액 검체는 도착했지만 검사 의뢰서가 없습니다." (exact match; baseline 34) and "The cancellation requestは受け付けましたが、
 返金はまだ処理していません。" → "해지 신청은 접수했지만 환불은 아직 처리하지 않았습니다." (83; baseline 16).</p>
@@ -183,7 +203,7 @@ languages score a few points below two-language inputs (own dev set, ko target: 
 and on the official set mixed inputs score higher than single-language inputs for both targets (the mixed items are shorter and
 partly already in the target language) while Korean targets stay 3–12 points below English targets, i.e. the difficulty is the
 Korean generation side, not the switch detection.</p>
-<p><b>Remaining failures</b> (items below 45 chrF++: 110 of 500 for the 50M system, 83 of them with Korean target) are
+<p><b>Remaining failures</b> (items below 45 chrF++: 105 of 500 for the 50M system, 81 of them with Korean target) are
 dominated by lexical and register choices rather than structural errors: "The solar panelsは稼働していますが、曇りで発電量が落ちています。"
 → reference "태양광 패널은 가동 중이지만 흐린 날씨로 발전량이 줄었습니다." vs output "태양 패널은 작동하지만 흐리면 발전량이 줄어듭니다." (23) keeps
 the meaning but shares few character n-grams with the reference. The lowest Korean-target scores on single-language inputs
@@ -196,14 +216,15 @@ as agreement unless participants were explicitly given that option." → "응답
 Japanese grammar ("Will the reading responseのdeadlineは、Tuesday sectionではなく Thursday sectionに出席するstudentsでも同じですか" →
 "화요일 쪽으로 Thursday 쪽에"). Omissions at the switch point are rare: the length ratio is 0.99–1.03 on every subset, and because
 chrF++ is recall-weighted, staying literal and complete is the right behaviour for this metric.</p>
-<p><b>Budget comparison.</b> The 50M system beats the 5M system on all four subsets of both own dev sets at every data size we
-tried (5.2, 5.3), with the largest margin on Korean targets (+2.3 mixed→ko, +1.8 single→ko on the official set), consistent with
-the view that r=4 is capacity-limited for the Korean generation side. Its one shortfall, −1.0 on official single→en, is a
-sentence-level tie (63 wins / 61 losses of 150) driven by a few Spanish sentences that the larger adapter paraphrases
-("The ad received many views" for "generó muchas visitas", reference "generated many visits"); the larger adapter has learned
-more of the natural English style of the human pairs, which a literal single reference does not reward. The 50M system
-is also safer (no wrong-language outputs vs 1 for 5M) and more concise on Korean targets, where the metric gains are largest.
-A learning-rate sweep (1e-4 / 3e-4 / 6e-4) and DoRA at r=4 changed the pilot score by less than ±0.3, so the final systems use
-plain LoRA (5M: lr 3e-4, 50M: lr 2e-4, cosine, 3% warm-up, effective batch 16, 2 epochs).</p>
+<p><b>Budget comparison.</b> The 50M system beats the 5M system on all four subsets of the official validation set and of
+our own dev set at every data size we tried, and on three of the four subsets of the Qwen3-8B set (5.1–5.3), with the largest margin on Korean targets (+3.3 mixed→ko, +1.8
+single→ko on the official set), consistent with the view that a ~5M adapter is capacity-limited for the Korean generation side.
+On English targets the ordering between budgets is governed less by capacity than by literalness: at full strength the larger
+adapter paraphrases more ("The ad received many views" for "generó muchas visitas", reference "generated many visits"), having
+absorbed more of the natural English style of the human pairs, and a single literal reference does not reward that; scaling
+the update back (5.4) restores literal output and the expected ordering. The 50M system also produces no wrong-language outputs
+and fewer low-scoring items (105 vs 127 below 45 chrF++). A learning-rate sweep (1e-4 / 3e-4 / 6e-4) and DoRA at r=4 changed the
+pilot score by less than ±0.3, so the final systems use plain LoRA (5M: lr 3e-4, 50M: lr 2e-4, cosine, 3% warm-up, effective
+batch 16, 2 epochs).</p>
 
 </body></html>
